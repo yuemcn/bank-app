@@ -1,0 +1,6 @@
+Main Orange: #ff6900
+Lighter Orange: #fcb900
+White: #ffff
+Dark/Navy Blue: #020381
+Light Dark: #2D2E2E
+Font: futura-pt
