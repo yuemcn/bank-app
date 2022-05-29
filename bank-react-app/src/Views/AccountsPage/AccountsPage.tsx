@@ -5,22 +5,31 @@ import { Account } from "../../Components/Account/Account";
 import { Loading } from "../../Components/Loading/Loading";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { IAccount } from "../../Interfaces/IAccount";
-import { getAccounts } from "../../Slices/AccountSlice";
+// import { getAccounts } from "../../Slices/UserSlice";
+import { createAccount, getAccounts } from "../../Slices/AccountSlice";
 import { AppDispatch, RootState } from "../../Store";
 
-export const AccountPage: React.FC = () => {
+export const AccountsPage: React.FC = () => {
 
     const profile = useSelector((state:RootState) => state.user);
     const accounts = useSelector((state:RootState) => state.accounts);
     const navigator = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 
+    const handleCreate = (event:React.MouseEvent<HTMLButtonElement>) => {
+        if (!profile.user) {
+            navigator("/login");
+        } else {
+            dispatch(createAccount(profile.user));
+        }
+    }
+
     useEffect(() => {
         if (!profile.user) {
             navigator("/login");
         }
         else if (profile.user && !accounts.accounts) {
-            dispatch(getAccounts(profile.user.username));
+            dispatch(getAccounts());
         }
 
         console.log("User state: ", profile, "Accounts: ", accounts);
@@ -30,13 +39,18 @@ export const AccountPage: React.FC = () => {
         <div>
             <Navbar />
             <br/>
-            <h1>Accounts</h1>
-            <br/>
-            {accounts.accounts ? accounts.accounts.map((account:IAccount) => {
-                return <Account {...account} key={account.accountNumber} />
-            }) :
-            <Loading />
-            }
+            <div>
+                <button className="create-account-btn" onClick={handleCreate}>Create Account</button>
+            </div>
+            <div>
+                <h1>Accounts</h1>
+                <br/>
+                {accounts.accounts ? accounts.accounts.map((account:IAccount) => {
+                    return <Account {...account} key={account.accountNumber} />
+                }) :
+                <Loading />
+                }
+            </div>
         </div>
     )
 

@@ -28,43 +28,43 @@ public class App {
     public static TransactionService tServ = new TransactionService(tDao);
     public static TransactionController tCon = new TransactionController(tServ);
 
-    public static void main(String[] args) throws ExistingUserException {
+    public static void main(String[] args) {
 
         Javalin server = Javalin.create(config -> {
             config.enableCorsForAllOrigins();
         });
 
-        server.exception(AccountNotFoundException.class, (exception, ctx) -> {
-            ctx.result("The account was not found");
-        });
+        server.exception(AccountNotFoundException.class, (exception, ctx) ->
+            ctx.result("The account was not found")
+        );
 
-        server.exception(DeactivatedAccountException.class, (exception, ctx) ->  {
-            ctx.result("Account has been deactivated");
-        });
+        server.exception(DeactivatedAccountException.class, (exception, ctx) ->
+            ctx.result("Account has been deactivated")
+        );
 
-        server.exception(ExistingUserException.class, (exception, ctx) ->  {
-            ctx.result("User already exists");
-        });
+        server.exception(ExistingUserException.class, (exception, ctx) ->
+            ctx.result("User already exists")
+        );
 
-        server.exception(InactiveAccountException.class, (exception, ctx) ->  {
-            ctx.result("Account is inactive");
-        });
+        server.exception(InactiveAccountException.class, (exception, ctx) ->
+            ctx.result("Account is inactive")
+        );
 
-        server.exception(IncorrectUsernameOrPasswordException.class, (exception, ctx) ->  {
-            ctx.result("The username or password is incorrect");
-        });
+        server.exception(IncorrectUsernameOrPasswordException.class, (exception, ctx) ->
+            ctx.result("The username or password is incorrect")
+        );
 
-        server.exception(NegativeBalanceException.class, (exception, ctx) ->  {
-            ctx.result("The account balance is negative");
-        });
+        server.exception(NegativeBalanceException.class, (exception, ctx) ->
+            ctx.result("The account balance is negative")
+        );
 
-        server.exception(NegativeAmountException.class, (exception, ctx) ->  {
-            ctx.result("Amount cannot be negative or zero");
-        });
+        server.exception(NegativeAmountException.class, (exception, ctx) ->
+            ctx.result("Amount cannot be negative or zero")
+        );
 
-        server.exception(UnauthorizedUserException.class, (exception, ctx) -> {
-            ctx.result("Only a manager can perform these actions");
-        });
+        server.exception(UnauthorizedUserException.class, (exception, ctx) ->
+            ctx.result("Only a manager can perform these actions")
+        );
 
         server.before(ctx -> ctx.header("Access-Control-Allow-Credentials", "true"));
         server.before(ctx -> ctx.header("Access-Control-Expose-Headers", "*"));
@@ -80,9 +80,9 @@ public class App {
             path("accounts", () -> {
                 post("/", aCon.handleOpenAccount);
                 put("/", aCon.handleChangeAccountStatus);
-                get("/{username}", aCon.handleGetAccountsByUser);
-                get("/get-all-accounts", aCon.handleGetAllAccounts);
-                get("/{accountNumber}", aCon.handleGetAccountDetails);
+                get("/", aCon.handleGetAccountsByUser);
+                get("/all-accounts", aCon.handleGetAllAccounts);
+                get("/account-details", aCon.handleGetAccountDetails);
             });
             path("transactions", () -> {
                 post("/create",tCon.handleCreateTransaction);

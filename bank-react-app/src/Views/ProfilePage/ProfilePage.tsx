@@ -15,7 +15,7 @@ export const ProfilePage:React.FC = () => {
 
     useEffect(() => {
         console.log("Get the information about user: ", username);
-        if (username && !profile.currentProfile) {
+        if (username && !profile.user) {
             dispatch(getUserDetails(username));
         }
         console.log("Current App State", profile);

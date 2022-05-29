@@ -27,14 +27,15 @@ public class AccountController {
         if (ctx.req.getSession().getAttribute("username") == null) {
             ctx.status(401);
             ctx.result("You must be logged in to open an account");
+            LoggingUtil.logger.info("Could not create new account: not logged in");
         } else {
             UserDao uDao = new UserDaoImpl();
             String username = (String) ctx.req.getSession().getAttribute("username");
             User u = uDao.getUserByUsername(username);
             Account a = aServ.openAccount(u);
             ctx.status(201);
-            String message = "Successfully created account #" + a.getAccountNumber() + ". Awaiting approval by Manager";
-            ctx.result(message);
+            ctx.result(oMap.writeValueAsString(a));
+            LoggingUtil.logger.info("Successfully created Account #" + a.getAccountNumber());
         }
     };
 
@@ -51,17 +52,15 @@ public class AccountController {
     };
 
     public Handler handleGetAccountsByUser = ctx -> {
-        // check if the user is logged in
         String username = (String) ctx.req.getSession().getAttribute("username");
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to view your accounts");
+            LoggingUtil.logger.info("Could not view accounts: not logged in");
         } else {
             Set<Account> accounts = aServ.getAccountsByUser(username);
-            String result = "";
-            for (Account a : accounts) result += a.toString() + "\n\n";
+            ctx.result(oMap.writeValueAsString(accounts));
             ctx.status(200);
-            ctx.result(result);
         }
     };
 

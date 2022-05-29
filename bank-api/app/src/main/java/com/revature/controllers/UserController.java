@@ -25,7 +25,7 @@ public class UserController {
     public Handler handleRegisterUser = (ctx) -> {
         User u = oMap.readValue(ctx.body(), User.class);
         UserDao uDao = new UserDaoImpl();
-        if (!(uDao.getUserByUsername(u.getUsername()) == null)) {
+        if ((uDao.getUserByUsername(u.getUsername()) != null)) {
             ctx.status(403);
             throw new ExistingUserException();
         } else {

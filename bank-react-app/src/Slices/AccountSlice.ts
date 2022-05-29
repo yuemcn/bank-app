@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IAccount } from "../Interfaces/IAccount";
+import { IUser } from "../Interfaces/IUser";
 
 interface AccountSliceState {
     loading: boolean,
@@ -15,16 +16,33 @@ const initialAccountState: AccountSliceState = {
 
 export const getAccounts = createAsyncThunk(
     "accounts/get",
-    async (username: string, thunkAPI) => {
+    async (thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.get(`http://localhost:8000/accounts/${username}`);
+            const res = await axios.get(`http://localhost:8000/accounts/`);
             return res.data;
         } catch (e) {
             console.log(e);
         }
     }
 );
+
+export const createAccount = createAsyncThunk(
+    "accounts/create",
+    async (user: IUser, thunkAPI) => {
+        try {
+            const res = await axios.post("http://localhost:8000/accounts");
+            let account: IAccount = {
+                accountNumber: res.data.accountNumber,
+                user: user,
+                balance: res.data.balance,
+                status: res.data.status
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
 
 export const AccountSlice = createSlice({
     name: 'accounts',
@@ -35,7 +53,7 @@ export const AccountSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(getAccounts.pending, (state, action) => {
+        builder.addCase(getAccounts.pending, (state) => {
             state.loading = true;
         });
 
@@ -45,7 +63,7 @@ export const AccountSlice = createSlice({
             state.error = false;
         });
 
-        builder.addCase(getAccounts.rejected, (state, action) => {
+        builder.addCase(getAccounts.rejected, (state) => {
             state.error = true;
             state.loading = false;
         })

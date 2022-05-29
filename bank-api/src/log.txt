@@ -14263,3 +14263,43 @@
 2022-05-17 15:10:43 INFO  LoggingUtil:51 - Retrieved accounts from user janedoe
 2022-05-17 15:11:34 INFO  LoggingUtil:58 - Successfully logged in user janedoe
 2022-05-17 15:11:43 INFO  LoggingUtil:51 - Retrieved accounts from user janedoe
+2022-05-26 17:48:17 INFO  LoggingUtil:55 - Attempt to login user hmcnelis failed
+2022-05-27 13:44:59 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:46:41 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:48:22 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:49:19 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:49:53 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:50:00 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 13:57:44 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-27 14:49:32 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-29 16:49:36 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 16:56:20 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:01:08 INFO  LoggingUtil:55 - Attempt to login user johndoe failed
+2022-05-29 17:01:19 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:02:09 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:03:39 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:04:08 INFO  LoggingUtil:26 - Created Account #2098971041
+2022-05-29 17:04:32 INFO  LoggingUtil:51 - Retrieved accounts from user johndoe
+2022-05-29 17:06:01 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:06:06 INFO  LoggingUtil:51 - Retrieved accounts from user johndoe
+2022-05-29 17:06:23 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:08:17 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:08:23 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 17:13:58 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:13:59 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 17:21:46 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:21:47 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 17:24:00 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:24:33 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:25:56 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:28:40 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:28:41 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 17:29:50 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:29:50 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 17:40:19 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 17:40:20 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 18:00:36 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 18:00:37 INFO  LoggingUtil:58 - Could not view accounts: not logged in
+2022-05-29 18:02:52 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-29 18:02:54 INFO  LoggingUtil:59 - Could not view accounts: not logged in
+2022-05-29 18:02:55 INFO  LoggingUtil:30 - Could not create new account: not logged in

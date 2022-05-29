@@ -12,8 +12,6 @@ export const Login: React.FC = () => {
 
     const dispatch: AppDispatch = useDispatch();
 
-    // const dispatch = useDispatch();
-
     const handleInput = (event:React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.name === "username") {
             setUsername(event.target.value);

@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
+import { IAccount } from "../Interfaces/IAccount"
 import { IUser } from "../Interfaces/IUser"
 
 // Figure out our default state for this slice
@@ -8,7 +9,7 @@ interface UserSliceState {
     loading: boolean, // whenever we are loading the user
     error: boolean, // user was or was not able to log in
     user?: IUser,
-    currentProfile?: IUser
+    accounts?: IAccount[]
 }
 
 const initialUserState: UserSliceState = {
@@ -26,7 +27,13 @@ export const loginUser = createAsyncThunk(
     async (credentials:Login, thunkAPI) => {
         try {
             const res = await axios.post('http://localhost:8000/users/login', credentials);
-            return res.data;
+            return {
+                firstname: res.data.firstname,
+                lastname: res.data.lastname,
+                email: res.data.email,
+                username: res.data.username,
+                type: res.data.type,            
+            }
         } catch (e) {
             return thunkAPI.rejectWithValue("something went wrong");
         }
@@ -45,9 +52,7 @@ export const getUserDetails = createAsyncThunk(
                 ssn: res.data.ssn,
                 email: res.data.email,
                 username: res.data.username,
-                // password: string,
                 type: res.data.type,
-                // accounts?: IAccount[]
             }
         } catch(error) {
             console.log(error);
@@ -55,12 +60,13 @@ export const getUserDetails = createAsyncThunk(
     }
 )
 
-export const logout = createAsyncThunk(
+export const logoutUser = createAsyncThunk(
     "user/logout",
     async (thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
-            const res = axios.get("http://localhost:8000/users/logout");
+            const res = await axios.get("http://localhost:8000/users/logout");
+            window.location.reload();
         } catch (e) {
             console.log(e);
         }
@@ -78,22 +84,28 @@ export const UserSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        // This is where we would create our reducer logic
-        builder.addCase(loginUser.pending, (state, action) => {
-            // whenever our thunk is pending, do this logic
+
+        // loginUser
+
+        builder.addCase(loginUser.pending, (state) => {
             state.loading = true;
         });
         builder.addCase(loginUser.fulfilled, (state, action) => {
-            // the payload in this case is the return from our asyncThunk from above
             state.user = action.payload;
             state.error = false;
             state.loading = false;
         });
-        builder.addCase(loginUser.rejected, (state, action) => {
-            // what happens if the request is not successful; done loading but issue with login
+        builder.addCase(loginUser.rejected, (state) => {
             state.error = true;
             state.loading = false;
         });
+
+        // logoutUser
+
+        builder.addCase(logoutUser.fulfilled, (state) => {
+            state.user = undefined;
+        })
+
     }
 })
 

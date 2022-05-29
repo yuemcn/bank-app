@@ -14,7 +14,7 @@ export const Homepage: React.FC = () => {
     const {username} = useParams();
 
     useEffect(() => {
-        if (username && !profile.currentProfile) {
+        if (username && !profile.user) {
             dispatch(getUserDetails(username));
         }
         console.log("Current App State", profile);

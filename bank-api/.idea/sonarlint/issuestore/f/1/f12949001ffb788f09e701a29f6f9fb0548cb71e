@@ -1,7 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(‘‹ø¨üÿÿÿÿ
-H
-java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ô°ïê
-N	java:S106"9Replace this use of System.out or System.err by a logger.(¦ƒÞ¹
