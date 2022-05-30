@@ -42,3 +42,7 @@ r
 Bapp/src/main/java/com/revature/models/CreateTransactionObject.java,8\c\8c082674ef0d6cec48afab09efb3f9a0af2dd6b8
 _
 /app/src/main/java/com/revature/models/User.java,f\f\fff6efe38be8224006013f88454fc3e0dd198250
+b
+2app/src/main/java/com/revature/models/Account.java,1\5\15cd52f361769cdbeaa7c568c481970d58a80972
+f
+6app/src/main/java/com/revature/models/Transaction.java,1\f\1ff21e728b95063c8c56a6da586c873a19f86dea

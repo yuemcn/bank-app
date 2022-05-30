@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { loginUser, toggleError } from "../../Slices/UserSlice";
 import { AppDispatch } from "../../Store";
 
@@ -52,6 +53,7 @@ export const Login: React.FC = () => {
                     </div>
                 </form>
                 <button className="login-button" onClick={handleLogin}>Login</button>
+                <Link to="/register">New user? Register here</Link>
             </div>
         </div>
     )

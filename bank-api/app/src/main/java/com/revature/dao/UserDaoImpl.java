@@ -148,7 +148,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void createUser(User user) {
 
-        String sql = "insert into users (first_name, last_name, ssn, email, username, password, user_type) values" +
+        String sql = "insert into users (first_name, last_name, ssn, email, username, password, type) values" +
                 "('" + user.getFirstname() + "','" + user.getLastname() + "'," + user.getSSN() + ",'"
                 + user.getEmail() + "','" + user.getUsername() + "','" + user.getPassword() + "',";
         sql += user.getType().equals(User.Type.MANAGER) ? "'Manager');" : "'Customer');";
@@ -158,7 +158,7 @@ public class UserDaoImpl implements UserDao {
             Statement s = connection.createStatement();
             s.execute(sql);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
     }

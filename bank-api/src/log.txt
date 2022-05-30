@@ -14303,3 +14303,10 @@
 2022-05-29 18:02:52 INFO  LoggingUtil:58 - Successfully logged in user johndoe
 2022-05-29 18:02:54 INFO  LoggingUtil:59 - Could not view accounts: not logged in
 2022-05-29 18:02:55 INFO  LoggingUtil:30 - Could not create new account: not logged in
+2022-05-30 11:37:49 INFO  LoggingUtil:55 - Attempt to login user  failed
+2022-05-30 12:23:11 INFO  LoggingUtil:42 - Successfully created user asummers
+2022-05-30 12:26:10 INFO  LoggingUtil:42 - Successfully created user asummers
+2022-05-30 12:27:46 INFO  LoggingUtil:42 - Successfully created user asummers
+2022-05-30 12:28:58 INFO  LoggingUtil:42 - Successfully created user mstephens
+2022-05-30 12:29:55 INFO  LoggingUtil:58 - Successfully logged in user mstephens
+2022-05-30 12:30:20 INFO  LoggingUtil:51 - Retrieved accounts from user mstephens

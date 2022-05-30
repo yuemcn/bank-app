@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
+import { Type } from "typescript"
 import { IAccount } from "../Interfaces/IAccount"
 import { IUser } from "../Interfaces/IUser"
 
@@ -20,6 +21,16 @@ const initialUserState: UserSliceState = {
 type Login = {
     username: string,
     password: string
+}
+
+type UserInfo = {
+    firstname: string,
+    lastname: string,
+    ssn: number,
+    email: string,
+    username: string,
+    password: string,
+    type: Type | any
 }
 
 export const loginUser = createAsyncThunk(
@@ -73,6 +84,18 @@ export const logoutUser = createAsyncThunk(
     }
 )
 
+export const registerUser = createAsyncThunk(
+    "user/register",
+    async (userInfo:UserInfo, thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.post("http://localhost:8000/users/register", userInfo);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
 // create the slice
 
 export const UserSlice = createSlice({
@@ -104,6 +127,13 @@ export const UserSlice = createSlice({
 
         builder.addCase(logoutUser.fulfilled, (state) => {
             state.user = undefined;
+        })
+
+        // register user
+
+        builder.addCase(registerUser.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
         })
 
     }

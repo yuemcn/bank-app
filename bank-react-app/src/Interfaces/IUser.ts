@@ -7,7 +7,7 @@ export interface IUser {
     ssn?: number,
     email: string,
     username: string,
-    // password: string,
+    password?: string,
     type: Type,
     accounts?: IAccount[]
 }

@@ -1,4 +1,4 @@
 export enum Type {
-    CUSTOMER = 1,
+    CUSTOMER = 0,
     MANAGER,
 }
