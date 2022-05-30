@@ -77,7 +77,6 @@ export const logoutUser = createAsyncThunk(
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.get("http://localhost:8000/users/logout");
-            window.location.reload();
         } catch (e) {
             console.log(e);
         }
@@ -127,6 +126,8 @@ export const UserSlice = createSlice({
 
         builder.addCase(logoutUser.fulfilled, (state) => {
             state.user = undefined;
+            state.error = false;
+            state.loading = false;
         })
 
         // register user

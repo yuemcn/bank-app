@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { getUserDetails } from "../../Slices/UserSlice";
 import { AppDispatch, RootState } from "../../Store";
@@ -13,12 +13,21 @@ export const Homepage: React.FC = () => {
 
     const {username} = useParams();
 
+    const navigator = useNavigate();
+
     useEffect(() => {
-        if (username && !profile.user) {
-            dispatch(getUserDetails(username));
+        if (!profile.user) {
+            navigator("/login");
+        }
+    }, []);
+
+    /*
+    useEffect(() => {
+        if (!username && !profile.user) {
         }
         console.log("Current App State", profile);
     }, [profile]);
+    */
 
     return(
         <div>

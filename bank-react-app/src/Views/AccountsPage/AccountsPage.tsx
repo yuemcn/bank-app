@@ -28,12 +28,20 @@ export const AccountsPage: React.FC = () => {
         if (!profile.user) {
             navigator("/login");
         }
+    })
+
+    /*
+    useEffect(() => {
+        if (!profile.user) {
+            navigator("/login");
+        }
         else if (profile.user && !accounts.accounts) {
             dispatch(getAccounts());
         }
 
         console.log("User state: ", profile, "Accounts: ", accounts);
     }, [profile, accounts.accounts])
+    */
 
     return (
         <div>

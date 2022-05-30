@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { getUserDetails } from "../../Slices/UserSlice";
 import { AppDispatch, RootState } from "../../Store";
@@ -13,6 +13,15 @@ export const ProfilePage:React.FC = () => {
 
     const { username } = useParams();
 
+    const navigator = useNavigate();
+
+    useEffect(() => {
+        if (!profile.user) {
+            navigator("/login");
+        }
+    }, []);
+
+    /*
     useEffect(() => {
         console.log("Get the information about user: ", username);
         if (username && !profile.user) {
@@ -20,6 +29,7 @@ export const ProfilePage:React.FC = () => {
         }
         console.log("Current App State", profile);
     }, [profile]);
+    */
 
     return (
         <div>

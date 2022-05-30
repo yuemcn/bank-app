@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../../Slices/UserSlice";
 import { AppDispatch, RootState } from "../../Store";
 
@@ -9,9 +9,11 @@ import './Navbar.css';
 export const Navbar: React.FC = () => {
     
     const dispatch:AppDispatch = useDispatch();
+    const navigator = useNavigate();
 
     const handleLogout = () => {
         dispatch(logoutUser());
+        navigator("/login");
     }
 
     const user = useSelector((state:RootState) => state.user.user);
