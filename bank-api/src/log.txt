@@ -14324,3 +14324,42 @@
 2022-05-30 13:06:51 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
 2022-05-30 13:06:57 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
 2022-05-30 13:06:58 INFO  LoggingUtil:51 - Retrieved accounts from user hmcnelis
+2022-05-30 13:17:55 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:19:38 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:19:57 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-30 13:22:41 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:23:37 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:23:45 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-30 13:24:12 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:36:27 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:36:59 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:38:23 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:38:43 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-30 13:43:10 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:43:20 INFO  LoggingUtil:58 - Successfully logged in user johndoe
+2022-05-30 13:53:08 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 13:53:09 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:53:09 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:53:41 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:53:45 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:53:58 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:54:16 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:56:25 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:56:39 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:56:49 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:10 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:22 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:32 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:39 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:42 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:57:58 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 13:58:03 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:10:24 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-05-30 14:10:25 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:14:58 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:15:50 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:15:56 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:16:30 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:16:33 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:16:48 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-05-30 14:17:00 INFO  LoggingUtil:55 - Not logged in to retrieve all users

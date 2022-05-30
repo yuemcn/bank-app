@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
+import { create } from "domain"
 import { Type } from "typescript"
 import { IAccount } from "../Interfaces/IAccount"
 import { IUser } from "../Interfaces/IUser"
@@ -10,7 +11,7 @@ interface UserSliceState {
     loading: boolean, // whenever we are loading the user
     error: boolean, // user was or was not able to log in
     user?: IUser,
-    accounts?: IAccount[]
+    users?: IUser[],
 }
 
 const initialUserState: UserSliceState = {
@@ -77,6 +78,7 @@ export const logoutUser = createAsyncThunk(
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.get("http://localhost:8000/users/logout");
+            window.location.reload();
         } catch (e) {
             console.log(e);
         }
@@ -128,14 +130,14 @@ export const UserSlice = createSlice({
             state.user = undefined;
             state.error = false;
             state.loading = false;
-        })
+        });
 
         // register user
 
         builder.addCase(registerUser.fulfilled, (state, action) => {
             state.error = false;
             state.loading = false;
-        })
+        });
 
     }
 })
