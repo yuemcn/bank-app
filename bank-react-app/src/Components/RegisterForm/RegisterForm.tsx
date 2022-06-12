@@ -75,27 +75,22 @@ export const RegisterForm: React.FC = () => {
                     <h4 className="input-h4">First Name</h4>
                     <input className="registration-input" type="text" name="first-name-field" onChange={handleChange}/>
                 </div>
-                <br/>
                 <div className="input-div">
                     <h4 className="input-h4">Last Name</h4>
                     <input className="registration-input" type="text" name="last-name-field" onChange={handleChange}/>
                 </div>
-                <br/>
                 <div className="input-div">
                     <h4 className="input-h4">SSN</h4>
                     <input className="registration-input" type="password" name="ssn-field" onChange={handleChange}/>
                 </div>
-                <br/>
                 <div className="input-div">
                     <h4 className="input-h4">Email</h4>
                     <input className="registration-input" type="text" name="email-field" onChange={handleChange}/>
                 </div>
-                <br/>
                 <div className="input-div">
                     <h4 className="input-h4">Username</h4>
                     <input className="registration-input" type="text" name="username-field" onChange={handleChange}/>
                 </div>
-                <br/>
                 <div className="input-div">
                     <h4 className="input-h4">Password</h4>
                     <input className="registration-input" type="password" name="password-field" onChange={handleChange}/>

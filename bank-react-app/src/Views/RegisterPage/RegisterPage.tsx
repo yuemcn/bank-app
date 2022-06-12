@@ -9,11 +9,8 @@ export const RegisterPage: React.FC = () => {
     return (
         <div className="register-page">
             <div className="logo-header">
-                <img src="/revature-logo.webp"/>
+                <img src="/revBackground.png"/>
             </div>
-            <br/>
-            <h1>Register Form</h1>
-            <br/>
             <RegisterForm/>
         </div>
     )

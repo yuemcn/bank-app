@@ -1,10 +1,10 @@
 :root {
-    --bg: #2D2E2E;
-    --dark: #0f0f0f;
-    --btn-orange: #ff6900;
-    --accent: #fcb900;
-    --text-white: #fff;
-}  
+    --orange: #F26925;
+    --dark-gray: #474C55;
+    --blue: #72A4C2;
+    --yellow: #FCB414;
+    --light-gray: #B9B9BA;
+  }  
 
 .register {
     width: fit-content;
@@ -15,45 +15,14 @@
 }
 
 .logo-header {
-    background: var(--dark);
+    margin-bottom: 20px;
 }
 
-/*
-:root {
-    --bg: #2D2E2E;
-    --dark: #0f0f0f;
-    --btn-orange: #ff6900;
-    --accent: #fcb900;
-    --text-white: #fff;
-}  
-
-.register {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.input-div {
+    margin-bottom: 20px;
 }
 
-.register-h1 {
-    margin-bottom: 10px;
-    text-align: center;
-
+.input-h4 {
+    margin-bottom: 5px;
 }
 
-.register-input{
-    height: 40px;
-    margin-bottom: 10px;
-    width: 100%;
-    border-radius: 10px;
-    padding: 8px;
-    padding-left: 15px;
-    border: solid 2px var(--dark);
-    font-size: 1.2rem;
-    color: var(--dark);
-}
-
-.logo-header {
-    background: var(--dark);
-}
-*/
