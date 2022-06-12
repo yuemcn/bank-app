@@ -19,23 +19,23 @@ export const ManagerNavbar: React.FC = () => {
         <nav className="navbar">
             <ul className="nav-menu">
                 <li className="logo">
-                    <img src="/revBackground.png"></img>
+                    <img src="/revBackground.png" className="rev-logo"></img>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/homepage"} className="nav-link">Home</Link>
+                    <Link to={"/homepage"} className="nav-link">HOME</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/profile"} className="nav-link">Profile</Link>
+                    <Link to={"/profile"} className="nav-link">PROFILE</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/accounts"} className="nav-link">Accounts</Link>
+                    <Link to={"/accounts"} className="nav-link">ACCOUNTS</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/customers"} className="nav-link">Customers</Link>
+                    <Link to={"/customers"} className="nav-link">CUSTOMERS</Link>
                 </li>
                 <li className="logout">
-                    <Link to={"/login"} className="nav-link">
-                        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+                    <Link to={"/login"} className="logout-link">
+                        <button className="logout-btn" onClick={handleLogout}>LOGOUT</button>
                     </Link>
                 </li>
             </ul>
