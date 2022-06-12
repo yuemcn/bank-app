@@ -33,22 +33,19 @@ export const Login: React.FC = () => {
 
     return(
         <div className="login">
-            <div className="logo-header">
-                <img src="/revature-logo.webp"/>
+            <div className="logo">
+                <img src="/revBackground.png"/>
             </div>
             <br/>
             <div className="text-container">
-                <h1 className="login-header">Welcome to Revature Bank</h1>
-                <h2 className="login-header">Sign in to use the online application</h2>
-                <br/>
                 <form className="login-form">
                     <div className="input-div">
-                        <h4 className="input-h4">Please enter your username</h4>
+                        <h4 className="input-h4">Username</h4>
                         <input autoComplete="off" className="login-input" type="text" placeholder="username" name="username" onChange={handleInput}/>
                     </div>
                     <br/>
                     <div className="input-div">
-                        <h4 className="input-h4">Please enter your password</h4>
+                        <h4 className="input-h4">Password</h4>
                         <input className="login-input" type="password" name="password" placeholder="password" onChange={handleInput}/>
                     </div>
                 </form>

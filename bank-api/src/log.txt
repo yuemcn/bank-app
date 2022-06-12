@@ -14363,3 +14363,4 @@
 2022-05-30 14:16:33 INFO  LoggingUtil:55 - Not logged in to retrieve all users
 2022-05-30 14:16:48 INFO  LoggingUtil:55 - Not logged in to retrieve all users
 2022-05-30 14:17:00 INFO  LoggingUtil:55 - Not logged in to retrieve all users
+2022-06-12 15:38:39 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis

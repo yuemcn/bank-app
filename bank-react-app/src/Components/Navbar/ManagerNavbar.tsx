@@ -19,7 +19,7 @@ export const ManagerNavbar: React.FC = () => {
         <nav className="navbar">
             <ul className="nav-menu">
                 <li className="logo">
-                    <img src="/revature-logo.webp"></img>
+                    <img src="/revBackground.png"></img>
                 </li>
                 <li className="nav-item">
                     <Link to={"/homepage"} className="nav-link">Home</Link>

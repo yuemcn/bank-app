@@ -26,14 +26,10 @@ k
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-e
-5app/src/main/java/com/revature/utils/LoggingUtil.java,b\4\b4d65e6825822e488c141173601b3357000368ac
 o
 ?app/src/main/java/com/revature/services/TransactionService.java,f\3\f310e62998c300b8cb8d14c039fb4f1b8c37abe3
 x
 Happ/src/main/java/com/revature/exceptions/UnauthorizedUserException.java,4\9\49188d6aed2bb8af748d2438d37b6e97572ae86c
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 k
 ;app/src/main/java/com/revature/services/AccountService.java,4\7\47aa89a4c9429fb0c3e574785700462a82ce5850
 r
@@ -56,9 +52,3 @@ q
 Aapp/src/main/java/com/revature/controllers/AccountController.java,a\4\a450ab8d93053971ef2450422e97029837a23173
 c
 3app/src/main/java/com/revature/dao/UserDaoImpl.java,9\3\93b2ff6a0384cc9b22d483c905194a0b8cffb6dd
-W
-'app/src/main/java/com/revature/App.java,f\f\ffd85c53fd8dba1268f2f2cc4f3c29534795188a
-u
-Eapp/src/main/java/com/revature/controllers/TransactionController.java,8\6\86105dee8ebcd96c72ffae680734ce17045bc319
-n
->app/src/main/java/com/revature/controllers/UserController.java,c\8\c8efb88e44ba24395badea17949be5e5b7cd6cad
