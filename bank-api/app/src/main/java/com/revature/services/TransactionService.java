@@ -32,9 +32,7 @@ public class TransactionService {
         Transaction t = new Transaction(a, amount, desc);
         a.setBalance(a.getBalance() + amount);
         aDao.updateAccount(a);
-        LoggingUtil.logger.info("Account #" + a.getAccountNumber() + "was updated");
         tDao.createTransaction(t);
-        LoggingUtil.logger.info("New transaction for Account #" + a.getAccountNumber() + "was created");
         return t;
     }
 
@@ -47,7 +45,6 @@ public class TransactionService {
             throws NegativeAmountException, NegativeBalanceException,
             InactiveAccountException, DeactivatedAccountException, AccountNotFoundException {
         if (amount <= 0) {
-            LoggingUtil.logger.info("NegativeAmountException was thrown");
             throw new NegativeAmountException();
         }
         return createTransaction(a, amount, desc);
@@ -81,8 +78,6 @@ public class TransactionService {
         String messageB = "Transfer from account " + source.getAccountNumber();
         debit(source, amount, messageA);
         credit(destination, amount ,messageB);
-        LoggingUtil.logger.info("Funds transferred from Account #" + source.getAccountNumber()
-                + "to Account #" + destination.getAccountNumber());
     }
 
     /**
@@ -91,7 +86,6 @@ public class TransactionService {
      * @return A list of all the account's transactions
      */
     public List<Transaction> getTransactionsFromAccount(long accountNumber) {
-        LoggingUtil.logger.info("Successfully retrieved all transactions from Account #" + accountNumber);
         return tDao.getTransactionsByAccount(accountNumber);
     }
 
@@ -104,23 +98,19 @@ public class TransactionService {
             InactiveAccountException, DeactivatedAccountException {
         // check if the account exists
         if (a == null) {
-            LoggingUtil.logger.info("AccountNotFoundException was thrown");
             throw new AccountNotFoundException();
         }
 
         // check if account amount is negative and account has a negative balance
         if (amount < 0 && a.getBalance() <=0) {
-            LoggingUtil.logger.info("NegativeBalanceException was thrown");
             throw new NegativeBalanceException("Account " + a.getAccountNumber() + "has a negative balance");
         }
         // check if account is inactive
         if (a.getStatus().equals(Account.Status.INACTIVE)) {
-            LoggingUtil.logger.info("InactiveAccountException was thrown");
             throw new InactiveAccountException("Account " + a.getAccountNumber() + "is inactive");
         }
         // check if account is deactivated
         if (a.getStatus().equals(Account.Status.DEACTIVATED)) {
-            LoggingUtil.logger.info("DeactivatedAccountException was thrown");
             throw new DeactivatedAccountException("Account " + a.getAccountNumber() + "has been deactivated");
         }
     }

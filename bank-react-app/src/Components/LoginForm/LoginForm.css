@@ -4,7 +4,7 @@
     --blue: #72A4C2;
     --yellow: #FCB414;
     --light-gray: #B9B9BA;
-  }  
+}
 
 .login {
     width: fit-content;
@@ -48,13 +48,15 @@ img {
     margin-bottom: 10px;
     font-size: 1.2rem;
     font-weight: 400;
-    color: #fff;
     border-radius: 10px;
+    color: white;
 }
 
 .login-button:hover {
     cursor: pointer;
-    border: var(--accent);
-    background: var(--accent);
-    color: #0f0f0f
+    opacity: 0.8;
+    transition: 0.3s;
+    /* border: var(--yellow);
+    background: var(--yellow);
+    color: #0f0f0f */
 }

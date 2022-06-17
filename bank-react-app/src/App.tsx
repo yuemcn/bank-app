@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { RegisterForm } from './Components/RegisterForm/RegisterForm';
 import { AccountsPage } from './Views/AccountsPage/AccountsPage';
@@ -11,7 +11,7 @@ import { RegisterPage } from './Views/RegisterPage/RegisterPage';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes >
         <Route path="*" element={<Navigate to="/login" replace />}/>
         <Route path="/login" element={<LoginPage />}/>
@@ -21,7 +21,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />}/>
         <Route path="/customers" element={<CustomersPage/>}/>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

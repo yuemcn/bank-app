@@ -23,7 +23,6 @@ public class AccountService {
         Account a = new Account(u);
         a.setAccountNumber(generateAccountNumber());
         aDao.createAccount(a);
-        LoggingUtil.logger.info("Created Account #" + a.getAccountNumber());
         return a;
     }
 
@@ -38,7 +37,6 @@ public class AccountService {
         if (a == null) throw new AccountNotFoundException();
         a.setStatus(status);
         aDao.updateAccount(a);
-        LoggingUtil.logger.info("Updated Account #" + a.getAccountNumber());
         return a;
     }
 
@@ -48,7 +46,6 @@ public class AccountService {
      * @return A set off all the user's accounts
      */
     public Set<Account> getAccountsByUser(String username) {
-        LoggingUtil.logger.info("Retrieved accounts from user " + username);
         return aDao.getAccountsByUser(username);
     }
 
@@ -58,10 +55,8 @@ public class AccountService {
      */
     public Set<Account> getAllAccounts(User u) throws UnauthorizedUserException {
         if (!u.getType().equals(User.Type.MANAGER)) {
-            LoggingUtil.logger.info("Could not get all accounts because user is not a manager");
             throw new UnauthorizedUserException();
         }
-        LoggingUtil.logger.info("Retrieved all accounts");
         return aDao.getAllAccounts();
     }
 

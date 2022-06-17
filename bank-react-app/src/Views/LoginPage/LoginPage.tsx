@@ -7,7 +7,7 @@ import { RootState } from "../../Store";
 
 export const LoginPage: React.FC = () => {
 
-    const userState = useSelector((state:RootState) => state.user);
+    const userState = useSelector((state: RootState) => state.user);
 
     const navigator = useNavigate();
 
@@ -17,8 +17,9 @@ export const LoginPage: React.FC = () => {
         }
     }, [userState])
 
-    return(
+    return (
         <div className="login-page">
+            {userState.error ? <h2 className="login-error">Username or password incorrect</h2> : <></>}
             <Login />
         </div>
     )

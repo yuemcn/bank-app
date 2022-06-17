@@ -1,3 +1,4 @@
+import { userInfo } from "os";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -24,24 +25,27 @@ export const AccountsPage: React.FC = () => {
         }
     }
 
-    useEffect(() => {
-        if (!profile.user) {
-            navigator("/login");
-        }
-    })
+    // useEffect(() => {
+    //     if (!profile.user) {
+    //         navigator("/login");
+    //     }
+    // })
 
-    /*
-    useEffect(() => {
-        if (!profile.user) {
-            navigator("/login");
-        }
-        else if (profile.user && !accounts.accounts) {
-            dispatch(getAccounts());
-        }
+    // useEffect(() => {
+    //     if (!profile) {
+    //         navigator("/login");
+    //     }
+    //     else if (profile.user && !accounts.userAccounts) {
+    //         dispatch(getAccounts());
+    //     }
+    //     console.log("User state: ", profile, "Accounts: ", accounts);
+    // }, [profile.user])
 
-        console.log("User state: ", profile, "Accounts: ", accounts);
-    }, [profile, accounts.accounts])
-    */
+    useEffect(() => {
+        if (!profile) {
+            navigator('/login');
+        }
+    }, [profile])
 
     return (
         <div>
@@ -53,7 +57,7 @@ export const AccountsPage: React.FC = () => {
             <div>
                 <h1>Accounts</h1>
                 <br/>
-                {accounts.accounts ? accounts.accounts.map((account:IAccount) => {
+                {accounts.userAccounts ? accounts.userAccounts.map((account:IAccount) => {
                     return <Account {...account} key={account.accountNumber} />
                 }) :
                 <Loading />

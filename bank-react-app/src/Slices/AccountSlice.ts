@@ -6,7 +6,8 @@ import { IUser } from "../Interfaces/IUser";
 interface AccountSliceState {
     loading: boolean,
     error: boolean,
-    accounts?: IAccount[]
+    userAccounts?: IAccount[],
+    allAccounts?: IAccount[]
 };
 
 const initialAccountState: AccountSliceState = {
@@ -49,7 +50,8 @@ export const AccountSlice = createSlice({
     initialState: initialAccountState,
     reducers: {
         clearAccounts: (state) => {
-            state.accounts = undefined
+            state.userAccounts = undefined;
+            state.allAccounts = undefined;
         }
     },
     extraReducers: (builder) => {
@@ -58,7 +60,7 @@ export const AccountSlice = createSlice({
         });
 
         builder.addCase(getAccounts.fulfilled, (state, action) => {
-            state.accounts = action.payload;
+            state.userAccounts = action.payload;
             state.loading = false;
             state.error = false;
         });

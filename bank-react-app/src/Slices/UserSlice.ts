@@ -1,6 +1,7 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 import axios from "axios"
 import { create } from "domain"
+import { userInfo } from "os"
 import { Type } from "typescript"
 import { IAccount } from "../Interfaces/IAccount"
 import { IUser } from "../Interfaces/IUser"
@@ -16,7 +17,7 @@ interface UserSliceState {
 
 const initialUserState: UserSliceState = {
     loading: false, // start out not loading anything
-    error: false
+    error: false,
 }
 
 type Login = {
@@ -36,9 +37,11 @@ type UserInfo = {
 
 export const loginUser = createAsyncThunk(
     'user/login',
-    async (credentials:Login, thunkAPI) => {
+    async (credentials: Login, thunkAPI) => {
         try {
+            axios.defaults.withCredentials = true;
             const res = await axios.post('http://localhost:8000/users/login', credentials);
+            console.log(res.data);
             return {
                 firstname: res.data.firstname,
                 lastname: res.data.lastname,
@@ -97,6 +100,19 @@ export const registerUser = createAsyncThunk(
     }
 )
 
+export const getAllUsers = createAsyncThunk(
+    "user/all-users",
+    async (thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.get("http://localhost:8000/users/all-users");
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
 // create the slice
 
 export const UserSlice = createSlice({
@@ -138,6 +154,14 @@ export const UserSlice = createSlice({
             state.error = false;
             state.loading = false;
         });
+
+        // get all users
+
+        builder.addCase(getAllUsers.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.users = action.payload;
+        })
 
     }
 })

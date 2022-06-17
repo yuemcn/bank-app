@@ -66,9 +66,6 @@ public class App {
             ctx.result("Only a manager can perform these actions")
         );
 
-        server.before(ctx -> ctx.header("Access-Control-Allow-Credentials", "true"));
-        server.before(ctx -> ctx.header("Access-Control-Expose-Headers", "*"));
-
         server.routes(() -> {
             path("users", () -> {
                 post("/register", uCon.handleRegisterUser);
@@ -93,6 +90,9 @@ public class App {
             });
 
         });
+
+        server.before(ctx -> ctx.header("Access-Control-Allow-Credentials", "true"));
+        server.before(ctx -> ctx.header("Access-Control-Expose-Headers", "*"));
 
         server.start(8000);
 

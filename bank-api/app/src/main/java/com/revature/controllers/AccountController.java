@@ -43,16 +43,19 @@ public class AccountController {
         if (ctx.req.getSession().getAttribute("username") == null || !ctx.req.getSession().getAttribute("type").equals(User.Type.MANAGER)) {
             ctx.status(401);
             ctx.result("You must be logged in as a manager to change an account's status");
+            LoggingUtil.logger.info("Could not change account status: not logged in as manager");
         } else {
             Account a = oMap.readValue(ctx.body(), Account.class);
             aServ.changeAccountStatus(a.getAccountNumber(), a.getStatus());
             ctx.status(200);
             ctx.result("Successfully updated Account status");
+            LoggingUtil.logger.info("Successfully changed Account #" + a.getAccountNumber() + " to " + a.getStatus());
         }
     };
 
     public Handler handleGetAccountsByUser = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
+        System.out.println(username);
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to view your accounts");
@@ -61,6 +64,7 @@ public class AccountController {
             Set<Account> accounts = aServ.getAccountsByUser(username);
             ctx.result(oMap.writeValueAsString(accounts));
             ctx.status(200);
+            LoggingUtil.logger.info("Successfully viewed accounts for user " + username);
         }
     };
 
@@ -75,6 +79,7 @@ public class AccountController {
             UserService uServ = new UserService(uDao);
             User u = uServ.getUserByUsername(username);
             ctx.result(oMap.writeValueAsString(aServ.getAllAccounts(u)));
+            LoggingUtil.logger.info("Successfully viewed all accounts");
         }
     };
 
@@ -89,6 +94,7 @@ public class AccountController {
             Account a = aServ.getAccountByNumber(accountObject.getAccountNumber());
             ctx.status(200);
             ctx.result(oMap.writeValueAsString(a));
+            LoggingUtil.logger.info("Successfully viewed details for Account #" + a.getAccountNumber());
         }
     };
 

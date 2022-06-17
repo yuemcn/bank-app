@@ -30,16 +30,13 @@ public class UserService {
             throws ExistingUserException {
         // check the database to see if the user exists with that ssn and username
         if (uDao.getUserByUsername(username) != null) {
-            LoggingUtil.logger.info("ExistingUserException thrown due to reason: Duplicate username");
             throw new ExistingUserException();
         }
         if (uDao.getUserBySSN(ssn) != null) {
-            LoggingUtil.logger.info("ExistingUserException thrown due to reason: Duplicate SSN");
             throw new ExistingUserException();
         }
         User u = new User(firstname, lastname, ssn, email, username, password, type);
         uDao.createUser(u);
-        LoggingUtil.logger.info("Successfully created user " + username);
         return u;
     }
 
@@ -51,11 +48,9 @@ public class UserService {
      */
     public User loginUser(String username, String password) throws IncorrectUsernameOrPasswordException {
         User u = uDao.getUserByUsername(username);
-        if (uDao.getUserByUsername(username) == null || !password.equals(u.getPassword())) {
-            LoggingUtil.logger.info("Attempt to login user " + username + " failed");
+        if (u == null || !password.equals(u.getPassword())) {
             throw new IncorrectUsernameOrPasswordException();
         }
-        LoggingUtil.logger.info("Successfully logged in user " + username);
         return u;
     }
 
@@ -65,20 +60,16 @@ public class UserService {
      */
     public Set<User> getAllUsers(User u) throws UnauthorizedUserException {
         if (!u.getType().equals(User.Type.MANAGER)) {
-            LoggingUtil.logger.info("Attempted to retrieve all users as a non-manager");
             throw new UnauthorizedUserException();
         }
-        LoggingUtil.logger.info("Successfully retrieved all users");
         return uDao.getAllUsers();
     }
 
     public User getUserByUsername(String username) throws IncorrectUsernameOrPasswordException {
         User u = uDao.getUserByUsername(username);
         if (u == null) {
-            LoggingUtil.logger.info("Failed attempt to find user " + username);
             throw new IncorrectUsernameOrPasswordException();
         }
-        LoggingUtil.logger.info("Successfully retrieved user " + username);
         return u;
     }
 

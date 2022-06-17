@@ -27,12 +27,14 @@ public class UserController {
         UserDao uDao = new UserDaoImpl();
         if ((uDao.getUserByUsername(u.getUsername()) != null)) {
             ctx.status(403);
+            LoggingUtil.logger.info("Could not register user: existing user");
             throw new ExistingUserException();
         } else {
             uServ.registerUser(u.getFirstname(), u.getLastname(), u.getSSN(), u.getEmail(),
                     u.getUsername(), u.getPassword(), u.getType());
             ctx.status(201);
             ctx.result(oMap.writeValueAsString(u));
+            LoggingUtil.logger.info("Successfully registered user " + u.getUsername());
         }
     };
 
@@ -42,11 +44,14 @@ public class UserController {
         ctx.status(200);
         ctx.req.getSession().setAttribute("username", login.getUsername());
         ctx.result(oMap.writeValueAsString(login));
+        System.out.println((String) ctx.req.getSession().getAttribute("username"));
+        LoggingUtil.logger.info("Successfully logged in user " + u.getUsername());
     };
 
     public Handler handleLogoutUser = ctx -> {
         ctx.req.getSession().invalidate();
         ctx.result("Logged out Successfully");
+        LoggingUtil.logger.info("Successfully logged out user");
     };
 
     public Handler handleGetAllUsers = ctx -> {
@@ -58,11 +63,13 @@ public class UserController {
         } else {
             User u = uServ.getUserByUsername(username);
             ctx.result(oMap.writeValueAsString(uServ.getAllUsers(u)));
+            LoggingUtil.logger.info("Successfully retrieved all users");
         }
     };
 
     public Handler handleGetUserByUsername = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
+        System.out.println(username);
         if (username == null) {
             LoggingUtil.logger.info("Not logged in get user info");
             ctx.status(401);
@@ -70,6 +77,7 @@ public class UserController {
         } else {
             User u = uServ.getUserByUsername(username);
             ctx.result(oMap.writeValueAsString(u));
+            LoggingUtil.logger.info("Successfully retrieved info for user " + u.getUsername());
         }
 
     };

@@ -9,6 +9,7 @@ import com.revature.models.CreateTransactionObject;
 import com.revature.models.Transaction;
 import com.revature.models.TransferFundsObject;
 import com.revature.services.TransactionService;
+import com.revature.utils.LoggingUtil;
 import io.javalin.http.Handler;
 
 import java.util.List;
@@ -28,20 +29,21 @@ public class TransactionController {
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to make a transaction.");
+            LoggingUtil.logger.info("Could not create transaction: not logged in");
         } else {
             CreateTransactionObject tObject = oMap.readValue(ctx.body(), CreateTransactionObject.class);
-
-            // make sure the username matches the username attached to the account
             AccountDao aDao = new AccountDaoImpl();
             Account a = aDao.getAccountByNumber(tObject.accountNumber);
 
-            // make sure the account exists
-            if (a == null) throw new AccountNotFoundException();
+            if (a == null) {
+                LoggingUtil.logger.info("Could not create transaction: account not found");
+                throw new AccountNotFoundException();
+            }
 
             if (!a.getUser().getUsername().equals(username)) {
                 ctx.status(401);
                 ctx.result("You are not authorized to make transactions for this account.");
-
+                LoggingUtil.logger.info("Could not create transaction: unauthorized user");
             } else {
                 Transaction t = tServ.createTransaction(a, tObject.amount, tObject.description);
                 ctx.status(201);
@@ -52,6 +54,7 @@ public class TransactionController {
                 message += " on " + t.getDate().toString() + ".";
                 message += " Current balance is $" + a.getBalance() + ".";
                 ctx.result(message);
+                LoggingUtil.logger.info(message);
             }
 
         }
@@ -59,23 +62,24 @@ public class TransactionController {
 
     public Handler handleCredit = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
-        // check if user is logged in
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to make a transaction.");
+            LoggingUtil.logger.info("Could not credit account: not logged in");
         } else {
             CreateTransactionObject tObject = oMap.readValue(ctx.body(), CreateTransactionObject.class);
-
-            // make sure the username matches the username attached to the account
             AccountDao aDao = new AccountDaoImpl();
             Account a = aDao.getAccountByNumber(tObject.accountNumber);
 
-            // make sure the account exists
-            if (a == null) throw new AccountNotFoundException();
+            if (a == null) {
+                LoggingUtil.logger.info("Could not credit account: account not found");
+                throw new AccountNotFoundException();
+            }
 
             if (!a.getUser().getUsername().equals(username)) {
                 ctx.status(401);
                 ctx.result("You are not authorized to make transactions for this account.");
+                LoggingUtil.logger.info("Could not credit account: not authorized");
 
             } else {
                 Transaction t = tServ.credit(a, tObject.amount, tObject.description);
@@ -84,29 +88,30 @@ public class TransactionController {
                         + " into Account #" + t.getAccount().getAccountNumber() + " on " + t.getDate().toString()
                         + ". Current balance is $" + a.getBalance() + ".";
                 ctx.result(message);
+                LoggingUtil.logger.info(message);
             }
         }
     };
 
     public Handler handleDebit = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
-        // check if user is logged in
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to make a transaction.");
         } else {
             CreateTransactionObject tObject = oMap.readValue(ctx.body(), CreateTransactionObject.class);
-
-            // make sure the username matches the username attached to the account
             AccountDao aDao = new AccountDaoImpl();
             Account a = aDao.getAccountByNumber(tObject.accountNumber);
 
-            // make sure the account exists
-            if (a == null) throw new AccountNotFoundException();
+            if (a == null) {
+                LoggingUtil.logger.info("Could not debit account: account not found");
+                throw new AccountNotFoundException();
+            }
 
             if (!a.getUser().getUsername().equals(username)) {
                 ctx.status(401);
                 ctx.result("You are not authorized to make transactions for this account.");
+                LoggingUtil.logger.info("Could not debit account: not authorized");
 
             } else {
                 Transaction t = tServ.debit(a, tObject.amount, tObject.description);
@@ -115,6 +120,7 @@ public class TransactionController {
                         + " from Account #" + t.getAccount().getAccountNumber() + " on " + t.getDate().toString()
                         + ". Current balance is $" + a.getBalance() + ".";
                 ctx.result(message);
+                LoggingUtil.logger.info(message);
             }
         }
     };

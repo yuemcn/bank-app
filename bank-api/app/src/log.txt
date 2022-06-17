@@ -1,0 +1,82 @@
+2022-06-13 13:36:43 INFO  LoggingUtil:26 - Created Account #4677096586
+2022-06-13 13:36:43 INFO  LoggingUtil:41 - Updated Account #7503915881
+2022-06-13 13:36:43 INFO  LoggingUtil:41 - Updated Account #2086440550
+2022-06-13 13:36:43 INFO  LoggingUtil:41 - Updated Account #6336194563
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #9765515895was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #9765515895was created
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #8654796410was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #8654796410was created
+2022-06-13 13:36:43 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #5146802495was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #5146802495was created
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #6322939282was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #6322939282was created
+2022-06-13 13:36:43 INFO  LoggingUtil:84 - Funds transferred from Account #5146802495to Account #6322939282
+2022-06-13 13:36:43 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:50 - NegativeAmountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #5619204656was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #5619204656was created
+2022-06-13 13:36:43 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #6715366786was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #6715366786was created
+2022-06-13 13:36:43 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #3164671186was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #3164671186was created
+2022-06-13 13:36:43 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-13 13:36:43 INFO  LoggingUtil:35 - Account #9689303070was updated
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - New transaction for Account #9689303070was created
+2022-06-13 13:36:43 INFO  LoggingUtil:33 - ExistingUserException thrown due to reason: Duplicate username
+2022-06-13 13:36:43 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-06-13 13:36:43 INFO  LoggingUtil:55 - Attempt to login user john failed
+2022-06-13 13:36:43 INFO  LoggingUtil:42 - Successfully created user tuser
+2022-06-13 13:36:43 INFO  LoggingUtil:55 - Attempt to login user hmcnelis failed
+2022-06-13 13:36:43 INFO  LoggingUtil:37 - ExistingUserException thrown due to reason: Duplicate SSN
+2022-06-15 10:57:03 INFO  LoggingUtil:26 - Created Account #4866693173
+2022-06-15 10:57:03 INFO  LoggingUtil:41 - Updated Account #1423578209
+2022-06-15 10:57:03 INFO  LoggingUtil:41 - Updated Account #6143448912
+2022-06-15 10:57:03 INFO  LoggingUtil:41 - Updated Account #1418144971
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #1737816700was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #1737816700was created
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #1857598340was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #1857598340was created
+2022-06-15 10:57:03 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #6942120069was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #6942120069was created
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #4122391187was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #4122391187was created
+2022-06-15 10:57:03 INFO  LoggingUtil:84 - Funds transferred from Account #6942120069to Account #4122391187
+2022-06-15 10:57:03 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:113 - NegativeBalanceException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:50 - NegativeAmountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #6309373076was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #6309373076was created
+2022-06-15 10:57:03 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #6748009524was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #6748009524was created
+2022-06-15 10:57:03 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:118 - InactiveAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #7880540658was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #7880540658was created
+2022-06-15 10:57:03 INFO  LoggingUtil:123 - DeactivatedAccountException was thrown
+2022-06-15 10:57:03 INFO  LoggingUtil:35 - Account #5560242588was updated
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - New transaction for Account #5560242588was created
+2022-06-15 10:57:03 INFO  LoggingUtil:33 - ExistingUserException thrown due to reason: Duplicate username
+2022-06-15 10:57:03 INFO  LoggingUtil:58 - Successfully logged in user hmcnelis
+2022-06-15 10:57:03 INFO  LoggingUtil:55 - Attempt to login user john failed
+2022-06-15 10:57:03 INFO  LoggingUtil:42 - Successfully created user tuser
+2022-06-15 10:57:03 INFO  LoggingUtil:55 - Attempt to login user hmcnelis failed
+2022-06-15 10:57:03 INFO  LoggingUtil:37 - ExistingUserException thrown due to reason: Duplicate SSN
