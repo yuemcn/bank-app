@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { IUser } from "../../Interfaces/IUser";
 import { RootState } from "../../Store";
 
-export const User: React.FC = () => {
-
-    const userInfo = useSelector((state: RootState) => state.user);
+export const User: React.FC<IUser> = (user: IUser) => {
 
     return (
         <div className="user">
-            <h3>{userInfo.user?.firstname} {userInfo.user?.lastname}</h3>
+            <h3>{user.firstname} {user.lastname}</h3>
         </div>
     )
 }

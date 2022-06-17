@@ -9,7 +9,6 @@ public class Account {
 
     // no args constructor
     public Account() {
-        accountNumber = 1111111111l + (long) (Math.random() * (9999999999l - 1111111111l)); // random number
         status = Status.INACTIVE;
     }
 

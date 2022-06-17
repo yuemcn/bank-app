@@ -35,7 +35,7 @@ public class AccountController {
             Account a = aServ.openAccount(u);
             ctx.status(201);
             ctx.result(oMap.writeValueAsString(a));
-            LoggingUtil.logger.info("Successfully created Account #" + a.getAccountNumber());
+            LoggingUtil.logger.info("Successfully created new account for user " + u.getUsername());
         }
     };
 

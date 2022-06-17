@@ -5,13 +5,12 @@ import { Loading } from "../../Components/Loading/Loading";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { User } from "../../Components/User/User";
 import { IUser } from "../../Interfaces/IUser";
-import { getAllUsers } from "../../Slices/CustomersSlice";
+import { getAllUsers } from "../../Slices/UserSlice";
 import { AppDispatch, RootState } from "../../Store";
 
 export const CustomersPage: React.FC = () => {
 
     const userInfo = useSelector((state: RootState) => state.user);
-    const customersState = useSelector((state: RootState) => state.customers);
     const navigator = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 
@@ -21,7 +20,7 @@ export const CustomersPage: React.FC = () => {
         }
         else {
             console.log(userInfo);
-            dispatch(getAllUsers());
+            // dispatch(getAllUsers());
         }
     }, [userInfo.users]);
 
@@ -29,9 +28,10 @@ export const CustomersPage: React.FC = () => {
         <div>
             <Navbar/>
             <div className="all-users-page">
-                {customersState.users ? customersState.users.map((user: IUser) => {
+                {userInfo.users ?
+                userInfo.users.map((user: IUser) => {
                     return <User {...user} key={user.username}/>
-                }) :
+                }):
                 <Loading/>
                 }
             </div>

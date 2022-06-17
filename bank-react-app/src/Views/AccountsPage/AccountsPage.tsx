@@ -22,30 +22,25 @@ export const AccountsPage: React.FC = () => {
             navigator("/login");
         } else {
             dispatch(createAccount(profile.user));
+            navigator("/accounts");
         }
     }
 
-    // useEffect(() => {
-    //     if (!profile.user) {
-    //         navigator("/login");
-    //     }
-    // })
+    useEffect(() => {
+        if (!profile) {
+            navigator("/login");
+        }
+        else if (profile.user && !accounts.userAccounts) {
+            dispatch(getAccounts());
+        }
+        console.log("User state: ", profile, "Accounts: ", accounts);
+    }, [profile.user])
 
     // useEffect(() => {
     //     if (!profile) {
-    //         navigator("/login");
+    //         navigator('/login');
     //     }
-    //     else if (profile.user && !accounts.userAccounts) {
-    //         dispatch(getAccounts());
-    //     }
-    //     console.log("User state: ", profile, "Accounts: ", accounts);
-    // }, [profile.user])
-
-    useEffect(() => {
-        if (!profile) {
-            navigator('/login');
-        }
-    }, [profile])
+    // }, [profile])
 
     return (
         <div>

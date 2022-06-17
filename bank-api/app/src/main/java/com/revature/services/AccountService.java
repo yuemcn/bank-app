@@ -21,7 +21,6 @@ public class AccountService {
      */
     public Account openAccount(User u) {
         Account a = new Account(u);
-        a.setAccountNumber(generateAccountNumber());
         aDao.createAccount(a);
         return a;
     }
@@ -70,12 +69,12 @@ public class AccountService {
      * Generates a random account number that does not currently exist
      * @return a new account number
      */
-    public long generateAccountNumber() {
-        long result;
-        do {
-            result = 1111111111l + (long) (Math.random() * (9999999999l - 1111111111l));
-        } while (aDao.getAccountByNumber(result) != null);
-        return result;
-    }
+//    public long generateAccountNumber() {
+//        long result;
+//        do {
+//            result = 1111111111l + (long) (Math.random() * (9999999999l - 1111111111l));
+//        } while (aDao.getAccountByNumber(result) != null);
+//        return result;
+//    }
 
 }
