@@ -32,6 +32,7 @@ export const createAccount = createAsyncThunk(
     "accounts/create",
     async (user: IUser, thunkAPI) => {
         try {
+            axios.defaults.withCredentials = true;
             const res = await axios.post("http://localhost:8000/accounts");
             let account: IAccount = {
                 accountNumber: res.data.accountNumber,
@@ -39,6 +40,20 @@ export const createAccount = createAsyncThunk(
                 balance: res.data.balance,
                 status: res.data.status
             }
+            return account; // recently added this line
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+export const getAllAccounts = createAsyncThunk(
+    "accounts/all-accounts",
+    async (thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.get("http://localhost:8000/accounts/all-accounts");
+            return res.data;
         } catch (e) {
             console.log(e);
         }
@@ -68,7 +83,24 @@ export const AccountSlice = createSlice({
         builder.addCase(getAccounts.rejected, (state) => {
             state.error = true;
             state.loading = false;
-        })
+        });
+
+        // create account
+
+        builder.addCase(createAccount.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.userAccounts?.push(action.payload!);
+            state.allAccounts?.push(action.payload!);
+        });
+
+        // get all accounts
+
+        builder.addCase(getAllAccounts.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.allAccounts = action.payload;
+        });
     }
 })
 

@@ -8,11 +8,6 @@ import { AppDispatch, RootState } from "../../Store";
 export const Homepage: React.FC = () => {
 
     const profile = useSelector((state:RootState) => state.user);
-
-    const dispatch: AppDispatch = useDispatch();
-
-    const {username} = useParams();
-
     const navigator = useNavigate();
 
     useEffect(() => {

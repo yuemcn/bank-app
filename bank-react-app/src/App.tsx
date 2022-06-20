@@ -3,6 +3,7 @@ import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router
 import './App.css';
 import { RegisterForm } from './Components/RegisterForm/RegisterForm';
 import { AccountsPage } from './Views/AccountsPage/AccountsPage';
+import { AllAccountsPage } from './Views/AllAccountsPage/AllAccountsPage';
 import { CustomersPage } from './Views/CustomersPage/CustomersPage';
 import { Homepage } from './Views/Homepage/Homepage';
 import {LoginPage} from './Views/LoginPage/LoginPage';
@@ -19,7 +20,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />}/>
         <Route path="/accounts" element={<AccountsPage />}/>
         <Route path="/register" element={<RegisterPage />}/>
-        <Route path="/customers" element={<CustomersPage/>}/>
+        <Route path="/customers" element={<CustomersPage />}/>
+        <Route path="/all-accounts" element={<AllAccountsPage />}/>
       </Routes>
     </BrowserRouter>
   );

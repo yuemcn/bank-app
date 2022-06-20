@@ -1,38 +1,26 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Account } from "../../Components/Account/Account";
 import { Loading } from "../../Components/Loading/Loading";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { IAccount } from "../../Interfaces/IAccount";
-import { createAccount, getAccounts } from "../../Slices/AccountSlice";
+import { getAllAccounts } from "../../Slices/AccountSlice";
 import { AppDispatch, RootState } from "../../Store";
 
-import "./AccountsPage.css";
-
-export const AccountsPage: React.FC = () => {
+export const AllAccountsPage: React.FC = () => {
 
     const profile = useSelector((state: RootState) => state.user);
     const accounts = useSelector((state: RootState) => state.accounts);
     const navigator = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 
-    const handleCreate = (event: React.MouseEvent<HTMLButtonElement>) => {
-        if (!profile.user) {
-            navigator("/login");
-        } else {
-            dispatch(createAccount(profile.user));
-            dispatch(getAccounts());
-            navigator("/accounts");
-        }
-    }
-
     useEffect(() => {
         if (!profile) {
             navigator("/login");
         }
         else if (profile.user && !accounts.userAccounts) {
-            dispatch(getAccounts());
+            dispatch(getAllAccounts());
         }
         console.log("User state: ", profile, "Accounts: ", accounts);
     }, [profile.user])
@@ -41,17 +29,15 @@ export const AccountsPage: React.FC = () => {
         <div>
             <Navbar />
             <div className="header">
-                <h1>Accounts</h1>
+                <h1>All Accounts</h1>
             </div>
             <div>
-                {accounts.userAccounts ? accounts.userAccounts.map((account: IAccount) => {
+                {accounts.allAccounts ? accounts.allAccounts.map((account: IAccount) => {
                     return <Account {...account} key={account.accountNumber} />
                 }) :
                     <Loading />
                 }
             </div>
-            <button className="create-button" onClick={handleCreate}>Create Account</button>
         </div>
     )
-
 }

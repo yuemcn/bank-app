@@ -31,6 +31,9 @@ export const ManagerNavbar: React.FC = () => {
                     <Link to={"/accounts"} className="nav-link">ACCOUNTS</Link>
                 </li>
                 <li className="nav-item">
+                    <Link to={"/all-accounts"} className="nav-link">ALL ACCOUNTS</Link>
+                </li>
+                <li className="nav-item">
                     <Link to={"/customers"} className="nav-link">CUSTOMERS</Link>
                 </li>
                 <li className="logout">
