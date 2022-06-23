@@ -25,30 +25,13 @@ type Login = {
     password: string
 }
 
-type UserInfo = {
-    firstname: string,
-    lastname: string,
-    ssn: number,
-    email: string,
-    username: string,
-    password: string,
-    type: Type | any
-}
-
 export const loginUser = createAsyncThunk(
     'user/login',
     async (credentials: Login, thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.post('http://localhost:8000/users/login', credentials);
-            console.log(res.data);
-            return {
-                firstname: res.data.firstname,
-                lastname: res.data.lastname,
-                email: res.data.email,
-                username: res.data.username,
-                type: res.data.type,            
-            }
+            return res.data;
         } catch (e) {
             return thunkAPI.rejectWithValue("something went wrong");
         }
@@ -88,9 +71,19 @@ export const logoutUser = createAsyncThunk(
     }
 )
 
+type UserInfo = {
+    firstname: string,
+    lastname: string,
+    ssn: number,
+    email: string,
+    username: string,
+    password: string,
+    type: Type | any
+}
+
 export const registerUser = createAsyncThunk(
     "user/register",
-    async (userInfo:UserInfo, thunkAPI) => {
+    async (userInfo: UserInfo, thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.post("http://localhost:8000/users/register", userInfo);
@@ -106,6 +99,19 @@ export const getAllUsers = createAsyncThunk(
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.get("http://localhost:8000/users/all-users");
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+export const updateUser = createAsyncThunk(
+    "user/edit-profile",
+    async(userInfo: IUser, thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.put("http://localhost:8000/users/edit-profile", userInfo);
             return res.data;
         } catch (e) {
             console.log(e);
@@ -161,7 +167,15 @@ export const UserSlice = createSlice({
             state.error = false;
             state.loading = false;
             state.users = action.payload;
-        })
+        });
+
+        // update user
+
+        builder.addCase(updateUser.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.user = action.payload;
+        });
 
     }
 })

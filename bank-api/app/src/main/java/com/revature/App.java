@@ -73,6 +73,7 @@ public class App {
                 get("/logout", uCon.handleLogoutUser);
                 get("/all-users", uCon.handleGetAllUsers);
                 get("/{username}", uCon.handleGetUserByUsername);
+                put("/edit-profile", uCon.handleUpdateUser);
             });
             path("accounts", () -> {
                 post("/", aCon.handleOpenAccount);

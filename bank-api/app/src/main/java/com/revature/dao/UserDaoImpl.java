@@ -164,10 +164,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void updateUser(User user) {
+    public boolean updateUser(User user) {
 
-        String sql = "update users set first_name = ?, last_name = ?, email = ?, password = ?" +
-                "where username = ?";
+        String sql = "update users set first_name = ?, last_name = ?, email = ?, username = ?, password = ?" +
+                " where ssn = ?";
 
         try {
             connection = DAOUtilities.getConnection();
@@ -176,13 +176,18 @@ public class UserDaoImpl implements UserDao {
             stmt.setString(1, user.getFirstname());
             stmt.setString(2, user.getLastname());
             stmt.setString(3, user.getEmail());
-            stmt.setString(4, user.getPassword());
-            stmt.setString(5, user.getUsername());
+            stmt.setString(4, user.getUsername());
+            stmt.setString(5, user.getPassword());
+            stmt.setLong(6, user.getSSN());
 
             stmt.executeUpdate();
+
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     @Override

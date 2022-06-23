@@ -12,7 +12,7 @@ public interface UserDao {
     public User getUserBySSN(long ssn);
 
     public void createUser(User u);
-    public void updateUser(User user);
+    public boolean updateUser(User user);
     public void deleteUserByUsername(String username);
 
 }

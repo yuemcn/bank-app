@@ -6,6 +6,7 @@ import { IUser } from "../Interfaces/IUser";
 interface AccountSliceState {
     loading: boolean,
     error: boolean,
+    currentAccount?: IAccount,
     userAccounts?: IAccount[],
     allAccounts?: IAccount[]
 };

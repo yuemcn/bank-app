@@ -73,4 +73,11 @@ public class UserService {
         return u;
     }
 
+    public void updateUser(User u) {
+        boolean result = uDao.updateUser(u);
+        if (result == false) {
+            throw new NullPointerException();
+        }
+    }
+
 }

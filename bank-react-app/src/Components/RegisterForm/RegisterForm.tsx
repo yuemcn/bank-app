@@ -99,7 +99,6 @@ export const RegisterForm: React.FC = () => {
             <br/>
             <button className="submit-button" onClick={handleSubmit}>Submit</button>
             <Link to="/">Return to Login</Link>
-
         </div>
     )
 

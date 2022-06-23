@@ -44,7 +44,6 @@ public class UserController {
         ctx.status(200);
         ctx.req.getSession().setAttribute("username", login.getUsername());
         ctx.result(oMap.writeValueAsString(login));
-        System.out.println((String) ctx.req.getSession().getAttribute("username"));
         LoggingUtil.logger.info("Successfully logged in user " + u.getUsername());
     };
 
@@ -69,9 +68,8 @@ public class UserController {
 
     public Handler handleGetUserByUsername = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
-        System.out.println(username);
         if (username == null) {
-            LoggingUtil.logger.info("Not logged in get user info");
+            LoggingUtil.logger.info("Not logged in to get user info");
             ctx.status(401);
             ctx.result("You must be logged in to get user info");
         } else {
@@ -80,6 +78,21 @@ public class UserController {
             LoggingUtil.logger.info("Successfully retrieved info for user " + u.getUsername());
         }
 
+    };
+
+    public Handler handleUpdateUser = ctx -> {
+        String username = (String) ctx.req.getSession().getAttribute("username");
+        if (username == null) {
+            LoggingUtil.logger.info("Not logged in to update profile information");
+            ctx.status(401);
+            ctx.result("You must be logged in to update profile information");
+        } else {
+            User u = oMap.readValue(ctx.body(), User.class);
+            uServ.updateUser(u);
+            ctx.result(oMap.writeValueAsString(u));
+            ctx.status(201);
+            LoggingUtil.logger.info("Successfully updated user " + username);
+        }
     };
 
 }

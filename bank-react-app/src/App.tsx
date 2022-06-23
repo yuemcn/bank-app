@@ -7,6 +7,7 @@ import { AllAccountsPage } from './Views/AllAccountsPage/AllAccountsPage';
 import { CustomersPage } from './Views/CustomersPage/CustomersPage';
 import { Homepage } from './Views/Homepage/Homepage';
 import {LoginPage} from './Views/LoginPage/LoginPage';
+import { EditProfilePage } from './Views/ProfilePage/EditProfilePage';
 import { ProfilePage } from './Views/ProfilePage/ProfilePage';
 import { RegisterPage } from './Views/RegisterPage/RegisterPage';
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />}/>
         <Route path="/customers" element={<CustomersPage />}/>
         <Route path="/all-accounts" element={<AllAccountsPage />}/>
+        <Route path="/edit-profile" element={<EditProfilePage />}/>
       </Routes>
     </BrowserRouter>
   );

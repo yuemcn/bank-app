@@ -1,0 +1,11 @@
+.info {
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 5px;
+}
+
+.edit-profile-button {
+    margin: 10px;
+    padding: 10px;
+}

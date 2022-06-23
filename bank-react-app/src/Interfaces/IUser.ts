@@ -11,3 +11,4 @@ export interface IUser {
     type: Type,
     accounts?: IAccount[]
 }
+
