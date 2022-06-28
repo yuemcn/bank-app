@@ -1,14 +1,18 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, Update } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IAccount } from "../Interfaces/IAccount";
 import { IUser } from "../Interfaces/IUser";
+import { Status } from "../Interfaces/Status";
 
 interface AccountSliceState {
     loading: boolean,
     error: boolean,
     currentAccount?: IAccount,
     userAccounts?: IAccount[],
-    allAccounts?: IAccount[]
+    allAccounts?: IAccount[],
+    active?: IAccount[],
+    inactive?: IAccount[],
+    deactivated?: IAccount[]
 };
 
 const initialAccountState: AccountSliceState = {
@@ -61,6 +65,66 @@ export const getAllAccounts = createAsyncThunk(
     }
 )
 
+export const getAllActive = createAsyncThunk(
+    "accounts/active",
+    async (thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.post("http://localhost:8000/accounts/active");
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+export const getAllInactive = createAsyncThunk(
+    "accounts/inactive",
+    async (thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.get("http://localhost:8000/accounts/inactive");
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+export const getAllDeactivated = createAsyncThunk(
+    "accounts/deactivated",
+    async (thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.get("http://localhost:8000/accounts/deactivated");
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+type UpdateInfo = {
+    accountNumber: number,
+    status: string
+}
+
+export const updateAccountStatus = createAsyncThunk(
+    "accounts/update-status",
+    async (info: UpdateInfo, thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            console.log(info);
+            const res = await axios.put("http://localhost:8000/accounts/", info);
+            console.log(res);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+)
+
+// reducers
+
 export const AccountSlice = createSlice({
     name: 'accounts',
     initialState: initialAccountState,
@@ -102,6 +166,37 @@ export const AccountSlice = createSlice({
             state.loading = false;
             state.allAccounts = action.payload;
         });
+
+        // get all active
+
+        builder.addCase(getAllActive.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.active = action.payload;
+        });
+
+        // get all inactive
+
+        builder.addCase(getAllInactive.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.inactive = action.payload;
+        });
+
+        // get all deactivated
+
+        builder.addCase(getAllDeactivated.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.deactivated = action.payload;
+        });
+
+        // update account status
+
+        builder.addCase(updateAccountStatus.fulfilled, (state) => {
+            state.error = false;
+            state.loading = false;
+        })
     }
 })
 

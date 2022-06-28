@@ -19,8 +19,6 @@ r
 Bapp/src/test/java/com/revature/service/TransactionServiceTest.java,c\7\c72c05d6d51863a06848e332f455495526adb78b
 f
 6app/src/main/java/com/revature/dao/TransactionDao.java,6\e\6e2b3019631f43585c829b681bb850942beb4fb0
-k
-;app/src/test/java/com/revature/service/UserServiceTest.java,1\b\1ba9ea56e09b3b356b22189d77fa4a520029f741
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -40,3 +38,17 @@ e
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 o
 ?app/src/main/java/com/revature/services/TransactionService.java,f\3\f310e62998c300b8cb8d14c039fb4f1b8c37abe3
+_
+/app/src/main/java/com/revature/dao/UserDao.java,2\c\2c56241303a0b05da34118718b96f439ea0cb100
+?
+app/src/log.txt,4\b\4bee3eabddcfd7fac9b98dbad5c53d4c3218bec1
+h
+8app/src/main/java/com/revature/services/UserService.java,b\5\b5e8c4c17cbb187f9ad7c9746663ba464af025e1
+c
+3app/src/main/java/com/revature/dao/UserDaoImpl.java,9\3\93b2ff6a0384cc9b22d483c905194a0b8cffb6dd
+_
+/app/src/main/java/com/revature/models/User.java,f\f\fff6efe38be8224006013f88454fc3e0dd198250
+k
+;app/src/test/java/com/revature/service/UserServiceTest.java,1\b\1ba9ea56e09b3b356b22189d77fa4a520029f741
+u
+Eapp/src/main/java/com/revature/controllers/TransactionController.java,8\6\86105dee8ebcd96c72ffae680734ce17045bc319

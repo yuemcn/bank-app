@@ -43,6 +43,7 @@ public class UserController {
         User login = uServ.loginUser(u.getUsername(), u.getPassword());
         ctx.status(200);
         ctx.req.getSession().setAttribute("username", login.getUsername());
+        ctx.req.getSession().setAttribute("type", login.getType());
         ctx.result(oMap.writeValueAsString(login));
         LoggingUtil.logger.info("Successfully logged in user " + u.getUsername());
     };
@@ -77,7 +78,6 @@ public class UserController {
             ctx.result(oMap.writeValueAsString(u));
             LoggingUtil.logger.info("Successfully retrieved info for user " + u.getUsername());
         }
-
     };
 
     public Handler handleUpdateUser = ctx -> {

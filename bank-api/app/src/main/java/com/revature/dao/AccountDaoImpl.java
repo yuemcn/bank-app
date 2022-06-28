@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import com.revature.models.Account;
+import com.revature.models.User;
 import com.revature.utils.DAOUtilities;
 
 import java.sql.*;
@@ -128,24 +129,69 @@ public class AccountDaoImpl implements AccountDao {
         return a;
     }
 
+    public Set<Account> getAccountByStatus(String status) {
+        Set<Account> result = new HashSet<>();
+        String sql = "select * from accounts where status = '" + status + "';";
+
+        try {
+            UserDao uDao = new UserDaoImpl();
+            connection = DAOUtilities.getConnection();
+            stmt = connection.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+
+            while(rs.next()) {
+                Account a = new Account();
+                a.setAccountNumber(rs.getLong(1));
+                a.setUser(uDao.getUserByUsername(rs.getString(2)));
+                a.setBalance(rs.getLong(3));
+                String str = rs.getString(4);
+                if (str.equalsIgnoreCase("ACTIVE")) a.setStatus(Account.Status.ACTIVE);
+                else if (str.equalsIgnoreCase("INACTIVE")) a.setStatus(Account.Status.INACTIVE);
+                else a.setStatus(Account.Status.DEACTIVATED);
+                result.add(a);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     @Override
-    public void createAccount(Account account) {
-        String sql = "insert into accounts(account_owner, balance, status) values (?, ?, ?);";
+    public void createAccount(User user) {
+        String sql = "insert into accounts (account_owner, balance, status) values (?, ?, ?);";
 
         try {
             UserDao uDao = new UserDaoImpl();
             connection = DAOUtilities.getConnection();
             stmt = connection.prepareStatement(sql);
 
-            stmt.setString(1, account.getUser().getUsername());
-            stmt.setDouble(2, account.getBalance());
-            stmt.setString(3, account.getStatus().toString());
+            stmt.setString(1, user.getUsername());
+            stmt.setDouble(2, 0);
+            stmt.setString(3, "INACTIVE");
 
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
+//    public void createAccount(Account account) {
+//        String sql = "insert into accounts(account_owner, balance, status) values (?, ?, ?);";
+//
+//        try {
+//            UserDao uDao = new UserDaoImpl();
+//            connection = DAOUtilities.getConnection();
+//            stmt = connection.prepareStatement(sql);
+//
+//            stmt.setString(1, account.getUser().getUsername());
+//            stmt.setDouble(2, account.getBalance());
+//            stmt.setString(3, account.getStatus().toString());
+//
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Override
     public void updateAccount(Account account) {

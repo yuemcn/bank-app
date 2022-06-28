@@ -32,9 +32,9 @@ public class AccountController {
             UserDao uDao = new UserDaoImpl();
             String username = (String) ctx.req.getSession().getAttribute("username");
             User u = uDao.getUserByUsername(username);
-            Account a = aServ.openAccount(u);
+            aServ.openAccount(u);
             ctx.status(201);
-            ctx.result(oMap.writeValueAsString(a));
+            ctx.result("Successfully created new account for user " + u.getUsername());
             LoggingUtil.logger.info("Successfully created new account for user " + u.getUsername());
         }
     };
@@ -55,7 +55,6 @@ public class AccountController {
 
     public Handler handleGetAccountsByUser = ctx -> {
         String username = (String) ctx.req.getSession().getAttribute("username");
-        System.out.println(username);
         if (username == null) {
             ctx.status(401);
             ctx.result("You must be logged in to view your accounts");
@@ -65,6 +64,51 @@ public class AccountController {
             ctx.result(oMap.writeValueAsString(accounts));
             ctx.status(200);
             LoggingUtil.logger.info("Successfully viewed accounts for user " + username);
+        }
+    };
+
+    public Handler handleGetActiveAccounts = ctx -> {
+        String username = (String) ctx.req.getSession().getAttribute("username");
+        if (username == null) {
+            LoggingUtil.logger.info("Not logged in to retrieve accounts by status");
+            ctx.status(401);
+            ctx.result("You must be logged in to retrieve accounts by status");
+        }
+        else {
+            Set<Account> accounts = aServ.getAccountByStatus("ACTIVE");
+            ctx.result(oMap.writeValueAsString(accounts));
+            ctx.status(200);
+            LoggingUtil.logger.info("Successfully retrieved all active accounts");
+        }
+    };
+
+    public Handler handleGetInactiveAccounts = ctx -> {
+        String username = (String) ctx.req.getSession().getAttribute("username");
+        if (username == null) {
+            LoggingUtil.logger.info("Not logged in to retrieve accounts by status");
+            ctx.status(401);
+            ctx.result("You must be logged in to retrieve accounts by status");
+        }
+        else {
+            Set<Account> accounts = aServ.getAccountByStatus("INACTIVE");
+            ctx.result(oMap.writeValueAsString(accounts));
+            ctx.status(200);
+            LoggingUtil.logger.info("Successfully retrieved all inactive accounts");
+        }
+    };
+
+    public Handler handleGetDeactivatedAccounts = ctx -> {
+        String username = (String) ctx.req.getSession().getAttribute("username");
+        if (username == null) {
+            LoggingUtil.logger.info("Not logged in to retrieve accounts by status");
+            ctx.status(401);
+            ctx.result("You must be logged in to retrieve accounts by status");
+        }
+        else {
+            Set<Account> accounts = aServ.getAccountByStatus("DEACTIVATED");
+            ctx.result(oMap.writeValueAsString(accounts));
+            ctx.status(200);
+            LoggingUtil.logger.info("Successfully retrieved all deactivated accounts");
         }
     };
 

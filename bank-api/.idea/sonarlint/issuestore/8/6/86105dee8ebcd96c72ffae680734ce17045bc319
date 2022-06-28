@@ -1,0 +1,19 @@
+
+ƒ
+java:S1192"mDefine a constant instead of duplicating this literal "You must be logged in to make a transaction." 4 times.(úéùĞ
+”
+java:S1192-"~Define a constant instead of duplicating this literal "You are not authorized to make transactions for this account." 4 times.(ØÅ®ˆ
+_
+java:S1192"IDefine a constant instead of duplicating this literal "username" 5 times.(–Î
+:
+java:S1643µ"Use a StringBuilder instead.(÷±º¨8Àø™—0
+y
+java:S1104"cMake handleCreateTransaction a static final constant or non-public and provide accessors if needed.(öÈÀ
+s
+java:S1104?"XMake handleCredit a static final constant or non-public and provide accessors if needed.(ŒÕ™áûÿÿÿÿ
+m
+java:S1104`"WMake handleDebit a static final constant or non-public and provide accessors if needed.(Ûõ¿­
+‚
+java:S1104"_Make handleTransferFunds a static final constant or non-public and provide accessors if needed.(˜¹³şÿÿÿÿ8Àø™—0
+
+java:S1104"lMake handleGetTransactionsFromAccount a static final constant or non-public and provide accessors if needed.(ÏáÁÓøÿÿÿÿ8Àø™—0

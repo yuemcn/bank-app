@@ -43,13 +43,13 @@ export const AccountsPage: React.FC = () => {
             <div className="header">
                 <h1>Accounts</h1>
             </div>
-            <div>
+            <table className="accounts-table">
                 {accounts.userAccounts ? accounts.userAccounts.map((account: IAccount) => {
                     return <Account {...account} key={account.accountNumber} />
                 }) :
                     <Loading />
                 }
-            </div>
+            </table>
             <button className="create-button" onClick={handleCreate}>Create Account</button>
         </div>
     )

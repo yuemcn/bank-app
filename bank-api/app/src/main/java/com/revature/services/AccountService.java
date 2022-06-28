@@ -19,10 +19,8 @@ public class AccountService {
      * Opens a new account for a user
      * @param u The user to attach the account to
      */
-    public Account openAccount(User u) {
-        Account a = new Account(u);
-        aDao.createAccount(a);
-        return a;
+    public void openAccount(User u) {
+        aDao.createAccount(u);
     }
 
     /**
@@ -65,16 +63,9 @@ public class AccountService {
         return result;
     }
 
-    /**
-     * Generates a random account number that does not currently exist
-     * @return a new account number
-     */
-//    public long generateAccountNumber() {
-//        long result;
-//        do {
-//            result = 1111111111l + (long) (Math.random() * (9999999999l - 1111111111l));
-//        } while (aDao.getAccountByNumber(result) != null);
-//        return result;
-//    }
+    public Set<Account> getAccountByStatus(String status) {
+        Set<Account> result = aDao.getAccountByStatus(status);
+        return result;
+    }
 
 }

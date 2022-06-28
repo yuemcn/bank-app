@@ -1,0 +1,9 @@
+
+K
+java:S1191	"5Use classes from the Java API instead of Sun classes.(Χττε
+=
+java:S1125N"'Remove the unnecessary boolean literal.(π¤Φ
+X
+java:S1128";Remove this unused import 'com.revature.utils.LoggingUtil'.(νΑσ8ε•ªΐ™0
+U
+java:S1128	"8Remove this unused import 'com.sun.javafx.util.Logging'.(Χττε8ζ•ªΐ™0

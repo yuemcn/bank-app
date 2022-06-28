@@ -81,6 +81,9 @@ public class App {
                 get("/", aCon.handleGetAccountsByUser);
                 get("/all-accounts", aCon.handleGetAllAccounts);
                 get("/account-details", aCon.handleGetAccountDetails);
+                get("/active", aCon.handleGetActiveAccounts);
+                get("/inactive", aCon.handleGetInactiveAccounts);
+                get("/deactivated", aCon.handleGetDeactivatedAccounts);
             });
             path("transactions", () -> {
                 post("/create",tCon.handleCreateTransaction);

@@ -1,0 +1,14 @@
+.accounts-container {
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 10px;
+}
+
+.accounts-table {
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 90%;
+}
