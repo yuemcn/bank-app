@@ -34,7 +34,6 @@ export const AccountsPage: React.FC = () => {
         else if (profile.user && !accounts.userAccounts) {
             dispatch(getAccounts());
         }
-        console.log("User state: ", profile, "Accounts: ", accounts);
     }, [profile.user])
 
     return (

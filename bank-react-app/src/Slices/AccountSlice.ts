@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, Update } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IAccount } from "../Interfaces/IAccount";
 import { IUser } from "../Interfaces/IUser";
-import { Status } from "../Interfaces/Status";
 
 interface AccountSliceState {
     loading: boolean,
@@ -70,7 +69,7 @@ export const getAllActive = createAsyncThunk(
     async (thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
-            const res = await axios.post("http://localhost:8000/accounts/active");
+            const res = await axios.get("http://localhost:8000/accounts/active");
             return res.data;
         } catch (e) {
             console.log(e);

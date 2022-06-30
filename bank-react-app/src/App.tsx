@@ -10,6 +10,7 @@ import {LoginPage} from './Views/LoginPage/LoginPage';
 import { EditProfilePage } from './Views/ProfilePage/EditProfilePage';
 import { ProfilePage } from './Views/ProfilePage/ProfilePage';
 import { RegisterPage } from './Views/RegisterPage/RegisterPage';
+import { TransactionForm } from './Views/TransactionPage/TransactionForm';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/customers" element={<CustomersPage />}/>
         <Route path="/all-accounts" element={<AllAccountsPage />}/>
         <Route path="/edit-profile" element={<EditProfilePage />}/>
+        <Route path="/transactions/new" element={<TransactionForm />}/>
       </Routes>
     </BrowserRouter>
   );

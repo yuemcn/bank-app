@@ -18,16 +18,6 @@ export const RegisterForm: React.FC = () => {
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    /*
-    const [firstname, setFirstname] = useState<string | any>("");
-    const [lastname, setLastname] = useState<string | any>("");
-    const [ssn, setSSN] = useState<number | any>();
-    const [email, setEmail] = useState<string | any>("");
-    const [username, setUsername] = useState<string | any>("");
-    const [password, setPassword] = useState<string | any>("");
-    const type: Type = Type.CUSTOMER;
-    */
-
     const navigator = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 

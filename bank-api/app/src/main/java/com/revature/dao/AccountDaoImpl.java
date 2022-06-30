@@ -175,23 +175,6 @@ public class AccountDaoImpl implements AccountDao {
         }
 
     }
-//    public void createAccount(Account account) {
-//        String sql = "insert into accounts(account_owner, balance, status) values (?, ?, ?);";
-//
-//        try {
-//            UserDao uDao = new UserDaoImpl();
-//            connection = DAOUtilities.getConnection();
-//            stmt = connection.prepareStatement(sql);
-//
-//            stmt.setString(1, account.getUser().getUsername());
-//            stmt.setDouble(2, account.getBalance());
-//            stmt.setString(3, account.getStatus().toString());
-//
-//            stmt.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     @Override
     public void updateAccount(Account account) {
