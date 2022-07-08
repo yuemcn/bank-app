@@ -80,7 +80,7 @@ public class App {
                 put("/", aCon.handleChangeAccountStatus);
                 get("/", aCon.handleGetAccountsByUser);
                 get("/all-accounts", aCon.handleGetAllAccounts);
-                get("/account-details", aCon.handleGetAccountDetails);
+                get("/details/{id}", aCon.handleGetAccountDetails);
                 get("/active", aCon.handleGetActiveAccounts);
                 get("/inactive", aCon.handleGetInactiveAccounts);
                 get("/deactivated", aCon.handleGetDeactivatedAccounts);

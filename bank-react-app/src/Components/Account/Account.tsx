@@ -2,51 +2,47 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { IAccount } from "../../Interfaces/IAccount";
-import { updateAccountStatus } from "../../Slices/AccountSlice";
+import { getAccountDetails, updateAccountStatus, getAccounts } from "../../Slices/AccountSlice";
 import { AppDispatch, RootState } from "../../Store";
 import "./Account.css";
 
 export const Account: React.FC<IAccount> = (account: IAccount) => {
 
     const profile = useSelector((state: RootState) => state.user);
+    const accounts = useSelector((state: RootState) => state.accounts);
     const dispatch: AppDispatch = useDispatch();
     const navigator = useNavigate();
 
-    const handleActivate = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
+    const handleActivate = () => {
         let activate = {
             accountNumber: account.accountNumber,
             status: "ACTIVE"
         }
         dispatch(updateAccountStatus(activate));
-        navigator("/all-accounts");
     }
 
-    const handleDeactivate = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
+    const handleDeactivate = () => {
         let deactivate = {
             accountNumber: account.accountNumber,
             status: "DEACTIVATED"
         }
         dispatch(updateAccountStatus(deactivate));
-        navigator("/all-accounts");
     }
 
-    const handleInactive = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
+    const handleInactive = () => {
         let inactive = {
             accountNumber: account.accountNumber,
             status: "INACTIVE"
         }
         dispatch(updateAccountStatus(inactive));
-        navigator("/all-accounts");
     }
 
     const handleHistory = (event: React.MouseEvent<HTMLButtonElement>) => {
-
+        
     }
 
     const handleTransaction = (event: React.MouseEvent<HTMLButtonElement>) => {
+        dispatch(getAccountDetails(account.accountNumber));
         navigator("/transactions/new");
     }
 

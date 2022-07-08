@@ -19,7 +19,7 @@ const initialTransactionState: TransactionSliceState = {
 
 // credit
 
-type CreditInfo = {
+type TransactionInfo = {
     accountNumber: number,
     amount: number,
     description: string
@@ -27,16 +27,33 @@ type CreditInfo = {
 
 export const credit = createAsyncThunk(
     "transactions/new/credit",
-    async(info: CreditInfo, thunkAPI) => {
+    async(info: TransactionInfo, thunkAPI) => {
         try {
             axios.defaults.withCredentials = true;
             const res = await axios.post("http://localhost:8000/transactions/credit", info);
+            console.log(res.data);
             return res.data;
         } catch (e) {
             console.log(e);
         }
     }
-)
+);
+
+// debit
+
+export const debit = createAsyncThunk(
+    "transactions/new/debit",
+    async(info: TransactionInfo, thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.post("http://localhost:8000/transactions/debit", info);
+            console.log(res.data);
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+);
 
 // reducers -------------------------------------------------------------------
 

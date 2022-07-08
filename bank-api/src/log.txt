@@ -19427,3 +19427,181 @@
 2022-06-30 13:49:35 INFO  LoggingUtil:48 - Successfully logged in user johndoe
 2022-06-30 13:49:35 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
 2022-06-30 14:12:03 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-02 10:41:57 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-02 10:42:16 INFO  LoggingUtil:66 - Successfully viewed accounts for user hmcnelis
+2022-07-02 10:42:21 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-02 10:42:21 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-02 10:42:21 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-02 10:42:21 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-02 10:42:33 INFO  LoggingUtil:52 - Successfully changed Account #1 to DEACTIVATED
+2022-07-02 10:42:34 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-02 10:42:41 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-02 10:42:43 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-02 10:42:43 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-02 10:42:43 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-02 10:42:43 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-02 10:42:44 INFO  LoggingUtil:52 - Successfully changed Account #1 to ACTIVE
+2022-07-02 10:42:51 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-02 10:43:34 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 10:43:35 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 10:52:50 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 10:52:52 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:02:31 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:02:33 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:04:25 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:04:25 INFO  LoggingUtil:107 - Could not debit account: account not found
+2022-07-02 11:05:54 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:07:13 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:08:26 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:09:22 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:09:53 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:11:08 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:21:21 INFO  LoggingUtil:133 - Not logged in to view account details
+2022-07-02 11:21:30 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:21:40 INFO  LoggingUtil:141 - Successfully viewed details for Account #1
+2022-07-02 11:27:06 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:27:08 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:27:22 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:28:32 INFO  LoggingUtil:75 - Could not credit account: account not found
+2022-07-02 11:29:26 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:29:27 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:33:19 INFO  LoggingUtil:141 - Successfully viewed details for Account #1
+2022-07-02 11:35:26 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:35:28 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:35:52 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:35:54 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:38:45 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:42:05 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:42:31 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:42:32 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:43:37 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:43:39 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:45:37 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 11:45:39 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-02 11:46:07 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-02 12:01:04 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-02 12:01:10 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-07 10:52:33 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-07 10:52:37 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-07 10:56:33 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 10:56:39 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 10:56:41 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 10:56:41 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 10:56:41 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 10:56:41 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 10:56:43 INFO  LoggingUtil:52 - Successfully changed Account #2 to DEACTIVATED
+2022-07-07 10:56:45 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 10:56:51 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 10:56:52 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 10:56:52 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 10:56:53 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 10:56:53 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 10:56:58 INFO  LoggingUtil:52 - Successfully changed Account #2 to ACTIVE
+2022-07-07 10:57:03 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 10:57:08 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 10:57:10 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 10:57:10 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 10:57:10 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 10:57:10 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 10:57:13 INFO  LoggingUtil:52 - Successfully changed Account #1 to INACTIVE
+2022-07-07 10:57:14 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 10:57:19 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 10:57:20 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 10:57:20 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 10:57:20 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 10:57:20 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 10:57:27 INFO  LoggingUtil:52 - Successfully changed Account #1 to ACTIVE
+2022-07-07 10:57:28 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 10:57:32 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 10:57:33 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 10:57:33 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 10:57:33 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 10:57:33 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 10:57:37 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 11:55:25 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 11:55:26 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 11:55:26 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 11:55:26 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 11:55:26 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 11:55:27 INFO  LoggingUtil:66 - Successfully viewed accounts for user hmcnelis
+2022-07-07 11:55:27 INFO  LoggingUtil:52 - Successfully changed Account #3 to DEACTIVATED
+2022-07-07 11:55:33 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-07 11:55:40 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 11:55:41 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 11:55:41 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 11:55:41 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 11:55:41 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 11:55:45 INFO  LoggingUtil:66 - Successfully viewed accounts for user hmcnelis
+2022-07-07 11:55:45 INFO  LoggingUtil:52 - Successfully changed Account #3 to ACTIVE
+2022-07-07 11:55:53 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-07 11:55:55 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-07 11:55:55 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-07 11:55:55 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-07 11:55:55 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-07 11:55:58 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 14:30:58 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 14:31:00 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 14:40:42 INFO  LoggingUtil:133 - Not logged in to view account details
+2022-07-08 14:40:49 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 14:42:10 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 14:42:11 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 14:42:30 INFO  LoggingUtil:91 - Successfully deposited $500.0 into Account #2 on 2022-07-08. Current balance is $500.0.
+2022-07-08 14:42:37 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 14:42:42 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 14:42:43 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 14:44:49 INFO  LoggingUtil:48 - Successfully logged in user asummers
+2022-07-08 14:44:50 INFO  LoggingUtil:66 - Successfully viewed accounts for user asummers
+2022-07-08 14:44:52 INFO  LoggingUtil:38 - Successfully created new account for user asummers
+2022-07-08 14:44:52 INFO  LoggingUtil:66 - Successfully viewed accounts for user asummers
+2022-07-08 14:57:40 INFO  LoggingUtil:91 - Successfully deposited $500.0 into Account #1 on 2022-07-08. Current balance is $500.0.
+2022-07-08 15:02:30 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 15:02:31 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:02:32 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:02:32 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:02:36 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:02:36 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:02:43 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:03:06 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 15:03:07 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:08 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:03:08 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:10 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:03:10 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:10 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:03:10 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:17 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:03:44 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 15:03:45 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:46 INFO  LoggingUtil:38 - Successfully created new account for user johndoe
+2022-07-08 15:03:46 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:03:48 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:03:53 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:03:55 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:04:06 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:04:20 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:04:28 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:05:36 INFO  LoggingUtil:133 - Not logged in to view account details
+2022-07-08 15:05:47 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:08:22 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:08:28 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:09:58 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:10:04 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:10:11 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:11:52 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:11:52 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:11:53 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-08 15:11:53 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-08 15:11:54 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-08 15:11:54 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:11:59 INFO  LoggingUtil:52 - Successfully changed Account #1 to ACTIVE
+2022-07-08 15:12:03 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:12:09 INFO  LoggingUtil:48 - Successfully logged in user hmcnelis
+2022-07-08 15:12:11 INFO  LoggingUtil:126 - Successfully viewed all accounts
+2022-07-08 15:12:11 INFO  LoggingUtil:96 - Successfully retrieved all inactive accounts
+2022-07-08 15:12:11 INFO  LoggingUtil:111 - Successfully retrieved all deactivated accounts
+2022-07-08 15:12:11 INFO  LoggingUtil:81 - Successfully retrieved all active accounts
+2022-07-08 15:12:15 INFO  LoggingUtil:54 - Successfully logged out user
+2022-07-08 15:13:12 INFO  LoggingUtil:48 - Successfully logged in user johndoe
+2022-07-08 15:13:13 INFO  LoggingUtil:66 - Successfully viewed accounts for user johndoe
+2022-07-08 15:13:23 INFO  LoggingUtil:91 - Successfully deposited $500.0 into Account #1 on 2022-07-08. Current balance is $500.0.
+2022-07-08 15:13:59 INFO  LoggingUtil:54 - Successfully logged out user

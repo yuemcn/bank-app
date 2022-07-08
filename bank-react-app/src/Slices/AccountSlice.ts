@@ -6,7 +6,7 @@ import { IUser } from "../Interfaces/IUser";
 interface AccountSliceState {
     loading: boolean,
     error: boolean,
-    currentAccount?: IAccount,
+    current?: IAccount,
     userAccounts?: IAccount[],
     allAccounts?: IAccount[],
     active?: IAccount[],
@@ -18,6 +18,10 @@ const initialAccountState: AccountSliceState = {
     loading: false,
     error: false
 };
+
+// ----------------------------------------------------------------------------
+
+// get accounts
 
 export const getAccounts = createAsyncThunk(
     "accounts/get",
@@ -31,6 +35,8 @@ export const getAccounts = createAsyncThunk(
         }
     }
 );
+
+// create account
 
 export const createAccount = createAsyncThunk(
     "accounts/create",
@@ -51,6 +57,8 @@ export const createAccount = createAsyncThunk(
     }
 )
 
+// get all accounts
+
 export const getAllAccounts = createAsyncThunk(
     "accounts/all-accounts",
     async (thunkAPI) => {
@@ -63,6 +71,8 @@ export const getAllAccounts = createAsyncThunk(
         }
     }
 )
+
+// get all active accounts
 
 export const getAllActive = createAsyncThunk(
     "accounts/active",
@@ -77,6 +87,8 @@ export const getAllActive = createAsyncThunk(
     }
 )
 
+// get all inactive accounts
+
 export const getAllInactive = createAsyncThunk(
     "accounts/inactive",
     async (thunkAPI) => {
@@ -90,6 +102,8 @@ export const getAllInactive = createAsyncThunk(
     }
 )
 
+// get all deactivated accounts
+
 export const getAllDeactivated = createAsyncThunk(
     "accounts/deactivated",
     async (thunkAPI) => {
@@ -102,6 +116,8 @@ export const getAllDeactivated = createAsyncThunk(
         }
     }
 )
+
+// update account status
 
 type UpdateInfo = {
     accountNumber: number,
@@ -122,7 +138,22 @@ export const updateAccountStatus = createAsyncThunk(
     }
 )
 
-// reducers
+// get account details
+
+export const getAccountDetails = createAsyncThunk(
+    "accounts/account-details",
+    async (accountNumber: number, thunkAPI) => {
+        try {
+            axios.defaults.withCredentials = true;
+            const res = await axios.get(`http://localhost:8000/accounts/details/${accountNumber}`);
+            return res.data;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+);
+
+// reducers -------------------------------------------------------------------
 
 export const AccountSlice = createSlice({
     name: 'accounts',
@@ -196,6 +227,14 @@ export const AccountSlice = createSlice({
             state.error = false;
             state.loading = false;
         })
+
+        // get account details
+
+        builder.addCase(getAccountDetails.fulfilled, (state, action) => {
+            state.error = false;
+            state.loading = false;
+            state.current = action.payload;
+        });
     }
 })
 

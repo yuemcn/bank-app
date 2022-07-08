@@ -133,12 +133,11 @@ public class AccountController {
             LoggingUtil.logger.info("Not logged in to view account details");
             ctx.status(401);
             ctx.result("You must be logged in to view account details");
-        } else {
-            Account accountObject = oMap.readValue(ctx.body(), Account.class);
-            Account a = aServ.getAccountByNumber(accountObject.getAccountNumber());
-            ctx.status(200);
+        }
+        else {
+            long id = Long.parseLong(ctx.pathParam("id"));
+            Account a = aServ.getAccountByNumber(id);
             ctx.result(oMap.writeValueAsString(a));
-            LoggingUtil.logger.info("Successfully viewed details for Account #" + a.getAccountNumber());
         }
     };
 

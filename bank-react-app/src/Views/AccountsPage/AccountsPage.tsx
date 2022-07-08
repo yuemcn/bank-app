@@ -17,7 +17,7 @@ export const AccountsPage: React.FC = () => {
     const navigator = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 
-    const handleCreate = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleCreate = () => {
         if (!profile.user) {
             navigator("/login");
         } else {

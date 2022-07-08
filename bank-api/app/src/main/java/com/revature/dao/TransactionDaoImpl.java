@@ -84,7 +84,7 @@ public class TransactionDaoImpl implements TransactionDao {
     @Override
     public List<Transaction> getTransactionsByAccount(long accountNumber) {
         List<Transaction> transactions = new ArrayList<>();
-        String sql = "select * from transactions where account_number = " + accountNumber;
+        String sql = "select * from transactions where account = " + accountNumber;
 
         try {
             AccountDao aDao = new AccountDaoImpl();
@@ -113,7 +113,7 @@ public class TransactionDaoImpl implements TransactionDao {
      */
     @Override
     public void createTransaction(Transaction t) {
-        String sql = "insert into transactions (account_number, transaction_date, amount, description) values (?, ?, ?, ?)";
+        String sql = "insert into transactions (account, transaction_date, amount, description) values (?, ?, ?, ?)";
 
         try {
             connection = DAOUtilities.getConnection();

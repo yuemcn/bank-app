@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../Components/Navbar/Navbar";
-import { ITransaction } from "../../Interfaces/ITransaction";
-import { credit } from "../../Slices/TransactionSlice";
+import { credit, debit } from "../../Slices/TransactionSlice";
 import { AppDispatch, RootState } from "../../Store";
 
 export const TransactionForm: React.FC = () => {
@@ -21,8 +20,6 @@ export const TransactionForm: React.FC = () => {
 
     const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setType(event.currentTarget.value);
-        console.log("Type: " + type);
-        console.log("event.currentTarget.value: " + event.currentTarget.value);
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,14 +33,26 @@ export const TransactionForm: React.FC = () => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        // type is credit or debit
-        if (type === "credit" || type === "debit") {
+
+        console.log("handleSubmit type: " + type);
+
+        if (type === "credit") {
             let info = {
-                accountNumber: accounts.currentAccount?.accountNumber!,
+                accountNumber: accounts.current?.accountNumber!,
                 amount: amount,
                 description: description
             }
+            console.log(info);
             dispatch(credit(info));
+        }
+        else if (type === "debit") {
+            let info = {
+                accountNumber: accounts.current?.accountNumber!,
+                amount: amount,
+                description: description
+            }
+            console.log(info);
+            dispatch(debit(info));
         }
         else {
             let info = {
@@ -51,6 +60,7 @@ export const TransactionForm: React.FC = () => {
                 destination: destination,
                 amount: amount
             }
+            console.log(info);
         }
         navigator("/accounts");
     }
@@ -60,28 +70,20 @@ export const TransactionForm: React.FC = () => {
             <Navbar />
             <div className="header">
                 <h1>New Transaction</h1>
-                <br />
-                <h2>Transaction Type</h2>
             </div>
             <form>
-                <select className="type" id="type" onChange={handleSelect}>
-                    <option selected value="credit">Deposit</option>
-                    <option value="debit">Withdraw</option>
-                    <option value="transfer">Transfer</option>
-                </select>
-                <br/>
-                {/* <label>
-                    Account:
-                    <input
-                        className="transaction-input"
-                        type="text"
-                        name="account"
-                        onChange={handleChange}
-                    />
-                </label> */}
-                <br/>
                 <label>
-                    Amount:
+                    Type: 
+                    <select className="type" id="type" onChange={handleSelect}>
+                        <option selected value="select-placeholder">-- Select Type --</option>
+                        <option value="credit">Deposit</option>
+                        <option value="debit">Withdraw</option>
+                        <option value="transfer">Transfer</option>
+                    </select>
+                </label>
+                <br />
+                <label>
+                    Amount: 
                     <input
                         className="transaction-input"
                         type="number"
@@ -89,21 +91,21 @@ export const TransactionForm: React.FC = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <br/>
+                <br />
                 <>
-                {transactions.current?.type === "transfer" ? () => {
-                    <label>
-                        Destination:
-                        <input
-                            className="transaction-input"
-                            type="number"
-                            name="destination"
-                            onChange={handleChange}
-                        />
-                    </label>
-                } :
-                    <></>
-                }
+                    {transactions.current?.type === "transfer" ? () => {
+                        <label>
+                            Destination:
+                            <input
+                                className="transaction-input"
+                                type="number"
+                                name="destination"
+                                onChange={handleChange}
+                            />
+                        </label>
+                    } :
+                        <></>
+                    }
                 </>
 
             </form>
